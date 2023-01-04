@@ -43,9 +43,11 @@ export default function Login() {
                 </div>
 
                         <div>
-                            <button type="submit" className="w-full flex justify-center bg-purple-800  hover:bg-purple-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+                            <a href="/PageBadges">
+                            <button type="submit" className="w-full flex justify-center bg-purple-800  hover:bg-purple-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500" >
                                 Sign in
                             </button>
+                            </a>
                         </div>
                 <div className="flex items-center justify-center">
                     <div className="text-sm ">
