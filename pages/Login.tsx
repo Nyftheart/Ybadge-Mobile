@@ -1,18 +1,21 @@
 import React from "react";
 import Image from 'next/image'
+import Link from "next/link";
 
 export default function Login() {
     //@ts-ignore
     //@ts-ignore
     // @ts-ignore
     //@ts-ignore
+    // @ts-ignore
+    // @ts-ignore
     return (
     <div className="mt-5">
         <Image src="/img.png" width={123} height={166} alt="logo" className="m-auto mt-20"/>
         <div
             className="relative   min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent rounded-3xl shadow-xl">
-            <div className="flex justify-center self-center  z-10">
-                <div className="p-12 bg-white mx-auto rounded-3xl w-96 ">
+            <div className="flex justify-center self-center  z-10 ">
+                <div className="p-12 bg-white mx-auto rounded-3xl w-96 mb-5">
                     <div className="mb-7">
                         <h3 className="font-semibold text-2xl text-gray-800">Sign In </h3>
                         {/* eslint-disable-next-line react/no-unescaped-entities */}
@@ -42,13 +45,14 @@ export default function Login() {
                     </div>
                 </div>
 
+
+                        <Link href="/PageBadges">
                         <div>
-                            <a href="/PageBadges">
-                            <button type="submit" className="w-full flex justify-center bg-purple-800  hover:bg-purple-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500" >
+                            <button type="submit" className="w-full flex justify-center bg-purple-800  hover:bg-purple-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500 mt-5" >
                                 Sign in
                             </button>
-                            </a>
                         </div>
+                        </Link>
                 <div className="flex items-center justify-center">
                     <div className="text-sm ">
                         <a href="#" className="text-purple-700 hover:text-purple-600">
