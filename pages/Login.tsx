@@ -15,7 +15,8 @@ export default function Login() {
                 <div className="p-12 bg-white mx-auto rounded-3xl w-96 ">
                     <div className="mb-7">
                         <h3 className="font-semibold text-2xl text-gray-800">Sign In </h3>
-                        <p className="text-gray-400">Don't have an account? <a href="#"
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
+                        <p className="text-gray-400">Don t have an account? <a href="#"
                                                                               className="text-sm text-purple-700 hover:text-purple-700">Sign Up</a></p>
                     </div>
                     <div className="space-y-6">
