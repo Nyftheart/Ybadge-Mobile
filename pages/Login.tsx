@@ -13,7 +13,7 @@ export default function Login() {
     <div className='pt-5 bg-black min-h-screen'>
       <Image
         src='/Recherche_Logo_Ybadges_Plan_de_travail_1_copie_2.png'
-        width={250}
+        width={125}
         height={166}
         alt='logo'
         className='m-auto py-20'
