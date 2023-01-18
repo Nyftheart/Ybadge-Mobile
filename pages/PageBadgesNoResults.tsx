@@ -14,7 +14,7 @@ export default function PageBadgesNoResults() {
 
                 <div className={"text-center"}>Pas de résultats
                     <div className={"m-auto"}>
-                    <Image className={""} src="/imgCircle.png" width={70} height={166} alt="badge-placeholder"/>
+                    <Image className={""} src="/imgCircle.png" width={70} height={166} alt="badge-placeholder" className=""/>
                     </div>
                 </div>
 
