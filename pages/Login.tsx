@@ -20,10 +20,12 @@ export default function Login() {
       />
       <div className=' sm:flex sm:flex-row'>
           <div className="justify-around text-white flex mx-10">
-              <p className="">INSCRIVEZ-VOUS</p>
+              <Link href="/Register">
+                <p className="">INSCRIVEZ-VOUS</p>
+              </Link>
               <p className="underline">SE CONNECTER</p>
           </div>
-          <div className="relative z-0 mx-16 mt-10">
+          <div className="relative z-0 mx-16 mt-8">
               <input type="text" name=""
                      className="peer block w-full appearance-none border-0 border-b border-white bg-transparent py-2.5 px-0 text-sm text-white focus:outline-none focus:ring-0"
                      placeholder=" "/>
@@ -41,7 +43,7 @@ export default function Login() {
               </label>
           </div>
           <div>
-              <button type="submit" className="flex mt-16 rounded-full bg-black border border-white px-14 py-2 text-white font-bold mx-auto">CONNECTION</button>
+              <button type="submit" className="flex mt-10 rounded-full bg-black border border-white px-14 py-2 text-white font-bold mx-auto">CONNECTION</button>
           </div>
 
       </div>
