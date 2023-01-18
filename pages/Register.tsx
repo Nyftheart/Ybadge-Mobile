@@ -18,7 +18,7 @@ export default function Register() {
                 alt='logo'
                 className='m-auto py-20'
             />
-            <div className=' sm:flex sm:flex-row'>
+            <div className='sm:flex sm:flex-row'>
                 <div className="justify-around text-white flex mx-10">
                     <p className="underline font-bold">INSCRIVEZ-VOUS</p>
                     <Link href="/Login">
@@ -27,7 +27,7 @@ export default function Register() {
                 </div>
                 <div className="relative z-0 mx-16 mt-8">
                     <input type="text" name=""
-                           className="peer block w-full appearance-none border-1 border-b border-white bg-transparent py-2.5 px-0 text-sm text-white focus:outline-none focus:ring-none"
+                           className="peer block w-full border-1 border-b border-white bg-transparent py-2.5 px-0 text-sm text-white focus:outline-none focus:ring-none"
                            placeholder=" "/>
                     <label
                         className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-white duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 ">
