@@ -1,9 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base{
-    input.password-mask {
-        font-family: "text-security-disc";
-        -webkit-text-security: disc;
-    }
+@layer base {
+  input.password-mask {
+    font-family: 'text-security-disc';
+    -webkit-text-security: disc;
+  }
+}
+
+.splash-screen-enter {
+  opacity: 0;
+}
+
+.splash-screen-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.splash-screen-exit {
+  opacity: 1;
+}
+
+.splash-screen-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
 }
