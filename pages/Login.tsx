@@ -12,7 +12,7 @@ export default function Login() {
   return (
     <div className='pt-5 bg-black min-h-screen'>
       <Image
-        src='/Recherche_Logo_Ybadges_Plan_de_travail_1_copie_2.png'
+        src='/Recherche_Logo_Ybadges.png'
         width={125}
         height={166}
         alt='logo'

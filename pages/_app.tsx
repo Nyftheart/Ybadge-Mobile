@@ -22,7 +22,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ duration }) => {
       unmountOnExit
     >
       <div className='fixed flex justify-center items-center flex-col z-50 top-0 left-0 w-full h-full bg-black'>
-        <img src="/Recherche_Logo_Ybadges_Plan_de_travail_1_copie_2.png" alt="Logo Ybadges" className='w-2/3 -translate-y-1/3' />
+        <img src="/Recherche_Logo_Ybadges.png" alt="Logo Ybadges" className='w-1/3 -translate-y-1/3' />
         <img src='/logo_ynov_campus_paris.png' alt='Logo Ynov Paris' className='bottom-5 right-5 absolute' />
       </div>
     </CSSTransition>
