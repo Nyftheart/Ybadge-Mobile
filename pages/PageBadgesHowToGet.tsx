@@ -10,7 +10,7 @@ export default function PageBadgesHowToGet() {
 
             <div className={"text-center text-red-600 text-2xl p-8 w-full"}> Nom</div>
 
-            <div className={"text-center text-orange-500 text-xl p-8 w-full"}> Comment l'avoir </div>
+            <div className={"text-center text-orange-500 text-xl p-8 w-full"}> Comment l avoir </div>
 
 
 
