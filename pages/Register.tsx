@@ -12,7 +12,7 @@ export default function Register() {
     return (
         <div className='pt-5 bg-black min-h-screen'>
             <Image
-                src='/Cristal.png'
+                src='/Recherche_Logo_Ybadges_Plan_de_travail_1_copie_2.png'
                 width={250}
                 height={166}
                 alt='logo'
@@ -20,7 +20,7 @@ export default function Register() {
             />
             <div className=' sm:flex sm:flex-row'>
                 <div className="justify-around text-white flex mx-10">
-                    <p className="underline">INSCRIVEZ-VOUS</p>
+                    <p className="underline font-bold">INSCRIVEZ-VOUS</p>
                     <Link href="/Login">
                         <p className="">SE CONNECTER</p>
                     </Link>

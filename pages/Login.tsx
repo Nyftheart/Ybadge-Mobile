@@ -12,7 +12,7 @@ export default function Login() {
   return (
     <div className='pt-5 bg-black min-h-screen'>
       <Image
-        src='/Cristal.png'
+        src='/Recherche_Logo_Ybadges_Plan_de_travail_1_copie_2.png'
         width={250}
         height={166}
         alt='logo'
@@ -23,7 +23,7 @@ export default function Login() {
               <Link href="/Register">
                 <p className="">INSCRIVEZ-VOUS</p>
               </Link>
-              <p className="underline">SE CONNECTER</p>
+              <p className="underline font-bold">SE CONNECTER</p>
           </div>
           <div className="relative z-0 mx-16 mt-8">
               <input type="text" name=""
