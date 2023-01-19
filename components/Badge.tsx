@@ -1,19 +1,11 @@
-import { useFrame, useLoader } from '@react-three/fiber'
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
-import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
+import { useFrame } from '@react-three/fiber'
+
 import { Center, Text3D } from '@react-three/drei'
 import { Euler, MeshPhongMaterial } from 'three'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { Motion, spring, PlainStyle } from 'react-motion'
 
-export default function Badge({ isMouseDown, position }: any) {
-  const materials = useLoader(MTLLoader, '/assets/three/badge/badge.mtl')
-  const object = useLoader(OBJLoader, '/assets/three/badge/badge.obj', (loader) => {
-    materials.preload()
-    loader.setMaterials(materials)
-  })
-  object.rotation.y = Math.PI / 2
-
+export default function Badge({ isMouseDown, position, object }: any) {
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 })
   const [pointer, setPointer] = useState({ x: 0, y: 0 })
   const [badgeIsTurned, setBadgeIsTurned] = useState(false)
