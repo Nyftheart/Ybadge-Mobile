@@ -15,7 +15,7 @@ export default function PageBadges() {
             <div className=" items-center mx-6 mb-11">
                 <form className=" flex items-center text-left justify-end">
                     <h1 className=" absolute text-Text left-7 underline decoration-0 underline-offset-4  font-bold text-2xl">ALL COLLECTION</h1>
-                    <input type="text" name="search" placeholder="" className=" bg-Search px-5 py-3 text-gray-800 w-12 border-0 rounded-full focus:outline-0 focus:w-full duration-500 z-0"/>
+                    <input type="text" name="search" placeholder="" className=" bg-Search px-5 py-3 text-Text w-12 border-0 rounded-full focus:outline-0 focus:w-full duration-500 z-0"/>
                 </form>
             </div>
 
