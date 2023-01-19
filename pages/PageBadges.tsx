@@ -3,87 +3,90 @@ import Image from 'next/image'
 
 export default function PageBadges() {
     return (
-        <div>
-            <div className={"text-red-600 text-center"}>ALL</div>
-
-            <div className={" ml-8 mr-8 padding-4 mb-8 mt-6 justify-center bg-gray-400 rounded-full text-center"}>Rechercher</div>
-
-            <div className={"text-orange-500 ml-4 underline "}>Badges Classiques :</div>
-
-            <div className={"flex justify-around mt-5 mx-3"}>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
+        <div className='pt-5 bg-Background min-h-screen '>
+            <img
+                src='/Recherche_Logo_Ybadges.png'
+                width={125}
+                height={166}
+                alt='logo'
+                className='m-auto pt-10 pb-8'
+            />
+            <div className="flex items-center justify-between mx-7 mb-11">
+                <h1 className="text-Text text-left underline decoration-0 underline-offset-4  font-bold text-2xl">ALL COLLECTION</h1>
+                <img
+                    src='/Search.png'
+                    alt='logo'
+                    className='w-6 h-6'
+                />
             </div>
-
-            <div className={"flex justify-around mt-3 mx-3"}>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
+            <div>
+            <div className={"text-Text mx-7"}>Badges Classiques</div>
+                <div className={"flex justify-between mt-6 mx-7"}>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                </div>
+                <div className={"flex justify-between mt-4 mx-7"}>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                </div>
             </div>
-
-            <div className={"text-orange-500 mt-5 ml-4 underline "}>Badges Classiques :</div>
-
-            <div className={"flex justify-around mt-5 mx-3"}>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
+            <div>
+                <div className={"text-Text mx-7 mt-12"}>Badges Classiques</div>
+                <div className={"flex justify-between mt-6 mx-7"}>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                </div>
+                <div className={"flex justify-between mt-4 mx-7"}>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                </div>
             </div>
-
-            <div className={"flex justify-around mt-3 mx-3"}>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
+            <div>
+                <div className={"text-Text mx-7 mt-12"}>Badges Classiques</div>
+                <div className={"flex justify-between mt-6 mx-7"}>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                </div>
+                <div className={"flex justify-between mt-4 mx-7"}>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                </div>
             </div>
-
-            <div className={"text-orange-500 mt-5 ml-4 underline "}>Badges Classiques :</div>
-
-            <div className={"flex justify-around mt-5 mx-3"}>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
+            <div>
+                <div className={"text-Text mx-7 mt-12"}>Badges Classiques</div>
+                <div className={"flex justify-between mt-6 mx-7"}>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                </div>
+                <div className={"flex justify-between mt-4 mx-7"}>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                    <Image src="/BadgePlaceholder.png" width={57} height={166} alt="badge-placeholder" className=""/>
+                </div>
             </div>
-
-            <div className={"flex justify-around mt-3 mx-3"}>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-            </div>
-
-            <div className={"text-orange-500 mt-5 ml-4 underline "}>Badges Classiques :</div>
-
-            <div className={"flex justify-around mt-5 mx-3"}>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-            </div>
-
-            <div className={"flex justify-around mt-3 mx-3"}>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-                <Image src="/BadgePlaceholder.png" width={70} height={166} alt="badge-placeholder" className=""/>
-            </div>
-
-
-
-
-
 
 
         </div>
