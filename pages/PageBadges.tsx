@@ -4,6 +4,7 @@ import Image from 'next/image'
 export default function PageBadges() {
     return (
         <div className='pt-5 bg-Background min-h-screen '>
+
             <img
                 src='/Recherche_Logo_Ybadges.png'
                 width={125}
@@ -11,13 +12,11 @@ export default function PageBadges() {
                 alt='logo'
                 className='m-auto pt-10 pb-8'
             />
-            <div className="flex items-center justify-between mx-7 mb-11">
-                <h1 className="text-Text text-left underline decoration-0 underline-offset-4  font-bold text-2xl">ALL COLLECTION</h1>
-                <img
-                    src='/Search.png'
-                    alt='logo'
-                    className='w-6 h-6'
-                />
+            <div className=" items-center mx-6 mb-11">
+                <form className=" flex items-center text-left justify-end">
+                    <h1 className=" absolute text-Text left-7 underline decoration-0 underline-offset-4  font-bold text-2xl">ALL COLLECTION</h1>
+                    <input type="text" name="search" placeholder="" className=" bg-Search px-5 py-3 text-gray-800 w-12 border-0 rounded-full focus:outline-0 focus:w-full duration-500 z-0"/>
+                </form>
             </div>
 
             <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full rounded-t-xl flex justify-around items-center">
