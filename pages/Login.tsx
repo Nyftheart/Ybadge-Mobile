@@ -42,9 +42,11 @@ export default function Login() {
                   Mot de passe
               </label>
           </div>
-          <div>
-              <button type="submit" className="flex mt-10 rounded-full bg-black border border-white px-14 py-2 text-white font-bold mx-auto">CONNECTION</button>
-          </div>
+          <Link href="/PageBadges">
+              <div>
+                  <button type="submit" className="flex mt-10 rounded-full bg-black border border-white px-14 py-2 text-white font-bold mx-auto">CONNECTION</button>
+              </div>
+          </Link>
 
       </div>
 
