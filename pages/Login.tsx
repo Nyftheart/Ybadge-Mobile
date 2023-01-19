@@ -11,7 +11,7 @@ export default function Login() {
   // @ts-ignore
   return (
     <div className='pt-5 bg-black min-h-screen'>
-      <Image
+      <img
         src='/Recherche_Logo_Ybadges.png'
         width={125}
         height={166}
