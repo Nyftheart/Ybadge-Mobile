@@ -24,6 +24,8 @@ export default function PageThree() {
       <Canvas
         onTouchStart={() => setIsMouseDown(true)}
         onTouchEnd={() => setIsMouseDown(false)}
+        onPointerDown={() => setIsMouseDown(true)}
+        onPointerUp={() => setIsMouseDown(false)}
         shadows={{ type: BasicShadowMap }}
         camera={{ position: [0, 0, 10] }}>
         <Scene isMouseDown={isMouseDown} />
