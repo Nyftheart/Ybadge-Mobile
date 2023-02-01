@@ -6,6 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors: {
+      Menu: '#414141',
+      Background: '#131313',
+      Text: "#ffffff",
+      transparent: "rgba(255,255,255,0)",
+      Search: "rgba(65, 65, 65, 1)",
+    },
   },
   plugins: [],
 }
