@@ -3,14 +3,19 @@ import Image from 'next/image'
 
 export default function PageBadgesHowToGet() {
     return (
-        <div>
-            <div className={"text-center mt-10 ml-16"}>
-                <Image src="/CirclePlaceholderProfile.png" width={280} height={166} alt="badge-placeholder" className=""/>
+        <div className={"bg-Background min-h-screen"}>
+            <div className={"text-center"}>
+                <img
+                    src='/Recherche_Logo_Ybadges.png'
+                    width={275}
+                    height={100}
+                    alt='logo'
+                    className='m-auto pt-10 pb-8'
+                />
             </div>
+            <div className={"text-Text text-center text-red-600 text-2xl p-8 w-full"}>BADGE MENTOR</div>
 
-            <div className={"text-center text-red-600 text-2xl p-8 w-full"}> Nom</div>
-
-            <div className={"text-center text-orange-500 text-xl p-8 w-full"}> Comment l avoir </div>
+            <div className={"text-Text text-center text-orange-500 text-xl p-8 w-full"}> Ce badge s&apos;obtient en devenant mentor.</div>
 
 
 
