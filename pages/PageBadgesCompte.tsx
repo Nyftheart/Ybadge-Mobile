@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from 'next/image'
 
 export default function PageBadgesCompte() {
@@ -23,12 +24,22 @@ export default function PageBadgesCompte() {
             </div>
 
             <div className={"rounded-lg pb-2 bg-gray-200 m-8 "}>
+                <Link href="/PageBadgesCompteDeco">
                 <div className={" border-2 rounded-full p-4 text-center text-Text text-2xl pt-4 text-orange-500"}> DECONNEXION</div>
+                </Link>
+            </div>
+            <div className={"rounded-lg pb-2 bg-gray-200 m-8 "}>
+                <Link href="/PageBadgesCompteSupprime">
+                    <div className={" border-2 rounded-full p-4 text-center text-Text text-2xl pt-4 text-orange-500"}> SUPPRIMER</div>
+                </Link>
             </div>
 
             <div className={"rounded-lg  bg-gray-200 m-8 "}>
+                <Link href="/PageBadgesProfilBadges">
                 <div className={"text-Text text-center text-Text text-2xl text-orange-500 "}>ANNULER</div>
+                </Link>
             </div>
+
 
             <div className={"rounded-lg  bg-gray-200"}>
                 <div className={"text-Text text-center text-Text text-xs text-orange-500 "}>Mentions légales</div>

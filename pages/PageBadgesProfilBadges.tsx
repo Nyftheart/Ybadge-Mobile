@@ -1,12 +1,36 @@
 import React from "react";
 import Image from 'next/image'
+import Link from "next/link";
 
 export default function PageBadgesProfilBadgdes() {
     return (
         <div className={"bg-Background min-h-screen"}>
 
             <div className={"flex justify-end mr-4"}>
-                <Image src="/IconParametres.png" width={35} height={166} alt="badge-placeholder" className=""/>
+                <Link href="/PageBadgesCompte">
+                <Image src="/IconParametres.png" width={35} height={166} alt="badge-placeholder" className="color"/>
+                </Link>
+            </div>
+            <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full rounded-t-xl flex justify-around items-center">
+                <Link href="/PageBadges">
+                    <img
+                        src='/Recherche_Logo_Ybadges.png'
+                        width={40}
+                        height={40}
+                        alt='logo'
+                        className='m-auto'
+                    />
+                </Link>
+                <Link href="#">
+                    <img
+                        src='/User.png'
+                        width={40}
+                        height={40}
+                        alt='logo'
+                        className='m-auto'
+                    />
+                </Link>
+
             </div>
 
             <div className={"flex justify-center mt-4"}>
