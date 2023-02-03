@@ -6,9 +6,9 @@ export default function PageBadgesProfilBadgdes() {
     return (
         <div className={"bg-Background min-h-screen"}>
 
-            <div className={"flex justify-end mr-4"}>
+            <div className={"flex justify-end mr-14"}>
                 <Link href="/PageBadgesCompte">
-                <Image src="/IconParametres.png" width={35} height={166} alt="badge-placeholder" className="color"/>
+                <Image src="/IconParametres.png" width={20} height={20} alt="badge-placeholder" className="pt-14 absolute"/>
                 </Link>
             </div>
             <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full rounded-t-xl flex justify-around items-center">
@@ -33,11 +33,11 @@ export default function PageBadgesProfilBadgdes() {
 
             </div>
 
-            <div className={"flex justify-center mt-4"}>
-                <Image src="/DefaultProfile.png" width={150} height={166} alt="badge-placeholder" className=""/>
+            <div className={"flex justify-center mt-20"}>
+                <Image src="/DefaultProfile.png" width={51} height={54} alt="badge-placeholder" className=""/>
             </div>
 
-            <div className={"flex justify-between mb-8"}>
+            <div className={"flex justify-between mb-8 mt-10"}>
 
                 <div className={"text-Text text-orange-500 m-4 "}>
                     <div>NOM :</div>
