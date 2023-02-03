@@ -11,7 +11,7 @@ export default function PageBadgesRecherche() {
                 width={125}
                 height={80}
                 alt='logo'
-                className='m-auto pt-10 pb-8'
+                className='m-auto pt-16 pb-8'
             />
             <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full rounded-t-xl flex justify-around items-center">
                 <Link href="/PageBadges">
@@ -34,13 +34,40 @@ export default function PageBadgesRecherche() {
                 </Link>
 
             </div>
-            <div className={"text-red-600 text-center"}>ALL</div>
 
-            <div className={" text-Text mx-7 ml-8 mr-8 padding-4 mb-8 mt-6 justify-center bg-gray-400 rounded-full text-center"}>Rechercher</div>
+            <div className="flex items-center mb-10">
+                <Link href="/PageBadges">
+                    <img
+                        src='/arrow.png'
+                        width={21}
+                        height={14}
+                        alt='logo'
+                        className='m-auto ml-6'
+                    />
+                </Link>
+                <div className="flex bg-Search rounded-2xl px-3 py-1 ml-14 mr-6 w-full justify-items-start">
+                    <img
+                        src='/Search.png'
+                        width={14}
+                        height={15}
+                        alt='logo'
+                        className='my-auto'
+                    />
+                    <p className="text-Text ml-3">la</p>
+                    <img
+                        src='/cross.png'
+                        width={11}
+                        height={11}
+                        alt='logo'
+                        className='my-auto ml-56 '
+                    />
+                </div>
+
+            </div>
 
             <div className={"rounded pb-8 bg-gray-400"}>
 
-                <div className={"text-Text mx-7 ml-4 underline "}>Résultats :</div>
+                <div className={"text-Text mx-7 ml-6 underline "}>Résultats :</div>
 
                 <div className={"flex justify-around mt-5 mx-3"}>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>

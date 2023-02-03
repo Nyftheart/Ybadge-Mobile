@@ -5,14 +5,14 @@ import PageBadgesCompte from "./PageBadgesCompte";
 
 export default function PageBadges() {
     return (
-        <div className='pt-5 bg-Background min-h-screen '>
+        <div className=' bg-Background min-h-screen '>
 
             <img
                 src='/Recherche_Logo_Ybadges.png'
                 width={125}
                 height={80}
                 alt='logo'
-                className='m-auto pt-10 pb-8'
+                className='m-auto pt-16 pb-8'
             />
             <div className=" items-center mx-6 mb-11">
                 <form className=" flex items-center text-left justify-end">
