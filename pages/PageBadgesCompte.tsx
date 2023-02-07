@@ -48,7 +48,7 @@ export default function PageBadgesCompte() {
                 <h1 className={"font-bold border rounded-full text-center text-Text text-md py-1.5 mt-7"}> SE DECONNECTER</h1>
                 </Link>
             </div>
-            <div className={"bg-gray-200 mt-64"}>
+            <div className={"bg-gray-200 mt-52"}>
                 <Link href="/PageBadgesCompteSupprime">
                     <div className={"p-4 text-center text-Text text-md pt-4 text-orange-500 underline decoration-1 underline-offset-2"}> SUPPRIMER SON COMPTE</div>
                 </Link>
