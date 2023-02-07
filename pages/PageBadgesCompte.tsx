@@ -6,18 +6,28 @@ export default function PageBadgesCompte() {
     return (
 
         <div className={"bg-Background min-h-screen"} >
-            <div className={"text-center"}>
+            <div className={"text-center pt-7"}>
                 <img
                     src='/Recherche_Logo_Ybadges.png'
-                    width={150}
+                    width={125}
                     height={100}
                     alt='logo'
                     className='m-auto pt-10 pb-8'
                 />
             </div>
-            <div className={"text-Text text-center m-4 text-red-600 text-3xl"}> COMPTE </div>
+            <div className={"text-Text text-red-600 text-3xl flex items-center mt-10"}>
+                <img
+                    src='/DefaultProfile.png'
+                    width={51}
+                    height={54}
+                    alt='logo'
+                    className='mx-9'
+                />
+                <h1>COMPTE</h1>
 
-            <div className={"text-Text text-blue-500 ml-24 mt-8"}>
+            </div>
+
+            <div className={"text-Text text-blue-500 ml-32 mt-8 "}>
                 <div>NOM :</div>
                 <div>Prénom : </div>
                 <div>Adresse mail : </div>

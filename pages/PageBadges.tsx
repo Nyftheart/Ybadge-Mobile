@@ -17,13 +17,19 @@ export default function PageBadges() {
             <div className=" items-center mx-6 mb-11">
                 <form className=" flex items-center text-left justify-end">
                     <h1 className=" absolute text-Text left-7 underline decoration-0 underline-offset-4  font-bold text-2xl">ALL COLLECTION</h1>
-                    <Link href="/PageBadgesRecherche">
-                    <input type="text" name="search" placeholder="" className=" bg-Search px-6 py-3 w-0 text-Text border-0 rounded-full focus:outline-0 focus:w-full duration-500 z-0"/>
+                    <Link href="PageBadgesRecherche">
+                        <img
+                            src='/Search.png'
+                            width={22}
+                            height={23}
+                            alt='logo'
+                            className='m-auto'
+                        />
                     </Link>
                 </form>
             </div>
 
-            <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full rounded-t-xl flex justify-around items-center">
+            <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
                 <Link href="#">
                 <img
                     src='/Recherche_Logo_Ybadges.png'

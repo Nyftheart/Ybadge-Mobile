@@ -11,7 +11,7 @@ export default function PageBadgesProfilBadgdes() {
                 <Image src="/IconParametres.png" width={20} height={20} alt="badge-placeholder" className="pt-14 absolute"/>
                 </Link>
             </div>
-            <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full rounded-t-xl flex justify-around items-center">
+            <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
                 <Link href="/PageBadges">
                     <img
                         src='/Recherche_Logo_Ybadges.png'

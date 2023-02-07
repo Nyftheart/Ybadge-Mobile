@@ -13,7 +13,7 @@ export default function PageBadgesRecherche() {
                 alt='logo'
                 className='m-auto pt-16 pb-8'
             />
-            <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full rounded-t-xl flex justify-around items-center">
+            <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full flex justify-around items-center">
                 <Link href="/PageBadges">
                     <img
                         src='/Recherche_Logo_Ybadges.png'
