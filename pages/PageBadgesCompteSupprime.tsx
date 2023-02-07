@@ -22,7 +22,7 @@ export default function PageBadgesCompteSupprime() {
                 </Link>
             </div>
 
-            <div className={"rounded-lg  bg-gray-200 mt-36"}>
+            <div className={"rounded-lg  bg-gray-200 mt-44"}>
                 <Link href="/PageBadgesCompte">
                     <div className={"p-4 text-center text-Text text-md pt-4 text-orange-500 mb-20 underline decoration-1 underline-offset-2"}>ANNULER</div>
                 </Link>

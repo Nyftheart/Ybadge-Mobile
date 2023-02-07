@@ -23,8 +23,8 @@ export default function PageBadgesProfilBadgdes() {
                 </Link>
                 <Link href="#">
                     <img
-                        src='/User.png'
-                        width={40}
+                        src='/DefaultProfile.png'
+                        width={28}
                         height={40}
                         alt='logo'
                         className='m-auto'
