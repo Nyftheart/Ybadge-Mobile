@@ -8,6 +8,25 @@
   }
 }
 
+@font-face {
+  font-family: "ChillaxSemi";
+  src: url('../Font/Chillax/Chillax-Semibold.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: "ChillaxMedium";
+  src: url('../Font/Chillax/Chillax-Medium.ttf');
+  font-weight: normal;
+}
+
+.MediumChill{
+  font-family: ChillaxMedium;
+}
+
+.SemiboldChill{
+  font-family: ChillaxSemi;
+}
+
 .splash-screen-enter {
   opacity: 0;
 }

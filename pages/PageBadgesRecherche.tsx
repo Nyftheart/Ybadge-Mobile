@@ -53,13 +53,13 @@ export default function PageBadgesRecherche() {
                         alt='logo'
                         className='my-auto'
                     />
-                    <p className="text-Text ml-3">la</p>
+                    <p className="text-Text ml-3 font-light font-poppins">la</p>
                     <img
                         src='/cross.png'
                         width={11}
                         height={11}
                         alt='logo'
-                        className='my-auto ml-56 '
+                        className='my-auto ml-52 '
                     />
                 </div>
 
@@ -67,7 +67,7 @@ export default function PageBadgesRecherche() {
 
             <div className={"rounded pb-8 bg-gray-400"}>
 
-                <div className={"text-Text mx-7 ml-6 underline "}>Résultats :</div>
+                <div className={"text-Text mx-5 mt-12 MediumChill"}>Badges Classiques</div>
 
                 <div className={"flex justify-around mt-5 mx-3"}>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>

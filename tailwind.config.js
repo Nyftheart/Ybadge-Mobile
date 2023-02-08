@@ -1,4 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {Plugin} */
+const plugin = require('tailwindcss/plugin');
+const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -7,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif']
+        'poppins': ['Poppins', 'sans-serif'],
       },
       colors: {
         'black-theme': '#131313'
@@ -22,5 +24,6 @@ module.exports = {
       Search: "rgba(65, 65, 65, 1)",
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 }
