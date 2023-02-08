@@ -40,7 +40,7 @@ export default function Login() {
           </div>
           <Link href="/PageBadges">
               <div>
-                  <button type="submit" className="flex mt-10 rounded-full bg-Background border border-Text px-14 py-2 text-Text mx-auto font-poppins font-bold">CONNECTION</button>
+                  <button type="submit" className="flex mt-10 rounded-full bg-Background border border-Text px-14 py-2 text-Text mx-auto font-poppins font-bold">CONNEXION</button>
               </div>
           </Link>
 

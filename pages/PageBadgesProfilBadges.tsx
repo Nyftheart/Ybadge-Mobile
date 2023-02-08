@@ -42,7 +42,7 @@ export default function PageBadgesProfilBadgdes() {
                 <div className={"text-Text text-orange-500 ml-6 "}>
                     <div className={"text-Text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2"}>GUETTA</div>
                     <div className={"text-Text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2"}>David</div>
-                    <div className={"text-Text text-orange-500 MediumChill border-b w-44 mr-10 pb-2"}>Inforamtique M2</div>
+                    <div className={"text-Text text-orange-500 MediumChill border-b w-44 mr-10 pb-2"}>Informatique M2</div>
                 </div>
 
                 <div className={""}>
@@ -76,11 +76,11 @@ export default function PageBadgesProfilBadgdes() {
 
 
             <div className={"flex justify-around mt-5 mx-3"}>
-                <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
-                <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
-                <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
-                <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
-                <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
+                    <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
+                    <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
+                    <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
+                    <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
+                    <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
             </div>
 
             <div className={"flex justify-around mt-3 mx-3"}>
