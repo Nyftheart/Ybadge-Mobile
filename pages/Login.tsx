@@ -15,7 +15,7 @@ export default function Login() {
         className='m-auto py-20'
       />
       <div className=' sm:flex sm:flex-row'>
-          <div className="justify-around flex mx-9">
+          <div className="justify-around flex mx-10">
               <Link href="/Register">
                 <p className="font-poppins text-md text-unselect">INSCRIVEZ-VOUS</p>
               </Link>
