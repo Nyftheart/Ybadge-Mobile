@@ -52,14 +52,15 @@ export default function PageBadges() {
             </div>
             <div>
             <div className={"text-Text mx-7 MediumChill"}>Badges Classiques</div>
+                <Link href="/PageBadgesDefinition">
                 <div className={"flex justify-between mt-6 mx-7"}>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
                     <Image src="/imgBadgeSlotAltered.png" width={57} height={80} alt="badge-placeholder" className=""/>
                     <Image src="/imgBadgeSlotAltered.png" width={57} height={80} alt="badge-placeholder" className=""/>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
-
                 </div>
+                </Link>
                 <div className={"flex justify-between mt-4 mx-7"}>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
                     <Image src="/imgBadgeSlotAltered.png" width={57} height={80} alt="badge-placeholder" className=""/>
