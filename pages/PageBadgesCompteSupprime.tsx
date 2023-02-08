@@ -16,15 +16,15 @@ export default function PageBadgesCompteSupprime() {
                     className='m-auto pt-10 pb-8'
                 />
             </div>
-            <div className={"rounded-lg pb-8 bg-gray-200 mx-24 mt-10 "}>
+            <div className={"rounded-lg pb-8 bg-gray-200 mx-20 mt-10 "}>
                 <Link href="/Login">
-                    <div className={" border-2 rounded-full text-center text-Text text-md py-1.5  text-orange-500 mb-20"}> SUPPRIMER COMPTE</div>
+                    <div className={"border rounded-full text-center text-Text text-md py-2 text-orange-500 mb-20 font-poppins font-bold"}> SUPPRIMER COMPTE</div>
                 </Link>
             </div>
 
             <div className={"rounded-lg  bg-gray-200 mt-44"}>
                 <Link href="/PageBadgesCompte">
-                    <div className={"p-4 text-center text-Text text-md pt-4 text-orange-500 mb-20 underline decoration-1 underline-offset-2"}>ANNULER</div>
+                    <div className={"p-4 text-center text-Text text-md pt-4 text-orange-500 mb-20 underline decoration-1 underline-offset-2 font-poppins font-medium"}>ANNULER</div>
                 </Link>
             </div>
 

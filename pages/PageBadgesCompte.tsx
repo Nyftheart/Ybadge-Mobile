@@ -33,27 +33,27 @@ export default function PageBadgesCompte() {
                     alt='logo'
                     className='mx-9'
                 />
-                <h1>COMPTE</h1>
+                <h1 className="SemiboldChill">COMPTE</h1>
 
             </div>
 
             <div className={"text-Text text-blue-500 ml-32 mt-8 "}>
-                <div>GUETTA</div>
-                <div>David</div>
-                <div>Informatique M2 </div>
+                <div className="MediumChill">GUETTA</div>
+                <div className="MediumChill">David</div>
+                <div className="MediumChill">Informatique M2 </div>
             </div>
 
-            <div className={"rounded-lg pb-2 bg-gray-200 mx-24 "}>
+            <div className={"rounded-lg pb-2 bg-gray-200 mx-20 "}>
                 <Link href="/PageBadgesCompteDeco">
-                <h1 className={"font-bold border rounded-full text-center text-Text text-md py-1.5 mt-7"}> SE DECONNECTER</h1>
+                <h1 className={"font-bold border rounded-full text-center text-Text text-md py-2 mt-7 font-poppins text-md"}> SE DECONNECTER</h1>
                 </Link>
             </div>
             <div className={"bg-gray-200 mt-36"}>
                 <Link href="/PageBadgesCompteSupprime">
-                    <div className={"p-4 text-center text-Text text-md pt-4 text-orange-500 underline decoration-1 underline-offset-2"}> SUPPRIMER SON COMPTE</div>
+                    <div className={"p-4 text-center text-Text text-md pt-4 text-orange-500 underline decoration-1 underline-offset-2 font-poppins font-medium"}> SUPPRIMER SON COMPTE</div>
                 </Link>
                 <div className={"rounded-lg  bg-gray-200"}>
-                    <div className={"text-Text text-center text-Text text-xs"}>Mentions légales</div>
+                    <div className={"text-Text text-center text-Text text-xs font-poppins font-light underline"}>Mentions légales</div>
                 </div>
             </div>
 
