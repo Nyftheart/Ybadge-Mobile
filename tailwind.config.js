@@ -6,11 +6,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif']
+      },
       colors: {
         'black-theme': '#131313'
       },
     },
     colors: {
+      unselect: "rgba(255, 255, 255, 0.35)",
       Menu: '#414141',
       Background: '#131313',
       Text: "#ffffff",
