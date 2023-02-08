@@ -107,7 +107,7 @@ export default function PageBadgesProfilBadgdes() {
                 <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
             </div>
 
-            <div className={"flex justify-around mt-3 mx-3"}>
+            <div className={"flex justify-around mt-3 mx-3 mb-10"}>
                 <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
                 <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
                 <Image src="/CirclePlaceholderProfile.png" width={58} height={58} alt="badge-placeholder" className=""/>
