@@ -25,7 +25,7 @@ export default function Register() {
                         <p className="font-poppins text-md text-unselect">SE CONNECTER</p>
                     </Link>
                 </div>
-                <div className="relative z-0 mx-14 mt-8">
+                <div className="relative z-0 mx-16 mt-8">
                     <input type="text" name=""
                            className="peer block w-full appearance-none rounded-b-none border-1 border-b border-Text bg-transparent py-2.5 px-0 text-sm text-Text focus:outline-none focus:ring-none"
                            placeholder=" "/>
@@ -34,7 +34,7 @@ export default function Register() {
                         Nom
                     </label>
                 </div>
-                <div className="relative z-0 mx-14 mt-8">
+                <div className="relative z-0 mx-16 mt-8">
                     <input type="text" name=""
                            className="peer block w-full appearance-none rounded-b-none border-1 border-b border-Text bg-transparent py-2.5 px-0 text-sm text-Text focus:outline-none focus:ring-0"
                            placeholder=" "/>
@@ -43,7 +43,7 @@ export default function Register() {
                         Prénom
                     </label>
                 </div>
-                <div className="relative z-0 mx-14 mt-8">
+                <div className="relative z-0 mx-16 mt-8">
                     <input type="text" name=""
                            className="peer block w-full appearance-none rounded-b-none border-1 border-b border-Text bg-transparent py-2.5 px-0 text-sm text-Text focus:outline-none focus:ring-0"
                            placeholder=" "/>
@@ -51,7 +51,7 @@ export default function Register() {
                         className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-Text duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 font-poppins font-light">
                         Adresse mail (Ynov)</label>
                 </div>
-                <div className="relative z-0 mx-14 mt-8">
+                <div className="relative z-0 mx-16 mt-8">
                     <input type="text" name=""
                            className="peer block w-full appearance-none rounded-b-none border-1 border-b border-Text bg-transparent py-2.5 px-0 text-sm text-Text focus:outline-none focus:ring-0"
                            placeholder=" "/>
