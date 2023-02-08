@@ -19,7 +19,7 @@ export default function Register() {
                 className='m-auto py-20'
             />
             <div className='sm:flex sm:flex-row'>
-                <div className="justify-around text-Text flex mx-9">
+                <div className="justify-around text-Text flex mx-10">
                     <p className="font-poppins text-md text-Text">INSCRIVEZ-VOUS</p>
                     <Link href="/Login">
                         <p className="font-poppins text-md text-unselect">SE CONNECTER</p>
