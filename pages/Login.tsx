@@ -15,11 +15,11 @@ export default function Login() {
         className='m-auto py-20'
       />
       <div className=' sm:flex sm:flex-row'>
-          <div className="justify-around flex mx-10">
+          <div className="justify-around flex mx-9">
               <Link href="/Register">
-                <p className="font-poppins text-sm text-unselect">INSCRIVEZ-VOUS</p>
+                <p className="font-poppins text-md text-unselect">INSCRIVEZ-VOUS</p>
               </Link>
-              <p className="font-poppins font-medium text-sm text-Text">SE CONNECTER</p>
+              <p className="font-poppins font-medium text-md text-Text">SE CONNECTER</p>
           </div>
           <div className="relative z-0 mx-16 mt-8">
               <input type="text" name=""
