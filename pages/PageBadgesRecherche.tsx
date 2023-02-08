@@ -68,7 +68,7 @@ export default function PageBadgesRecherche() {
             <div className={"rounded pb-8 bg-gray-400"}>
 
                 <div className={"text-Text mx-5 mt-12 MediumChill"}>Badges Classiques</div>
-
+                <Link href="/PageBadgesDefinition">
                 <div className={"flex justify-around mt-5 mx-3"}>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
                     <Image src="/imgBadgeSlotAltered.png" width={57} height={80} alt="badge-placeholder" className=""/>
@@ -76,7 +76,8 @@ export default function PageBadgesRecherche() {
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
                 </div>
-
+                </Link>
+                <Link href="/PageBadgesDefinition">
                 <div className={"flex justify-around mt-3 mx-3"}>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
                     <Image src="/imgBadgeSlotAltered.png" width={57} height={80} alt="badge-placeholder" className=""/>
@@ -84,6 +85,7 @@ export default function PageBadgesRecherche() {
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
                 </div>
+                </Link>
             </div>
 
 
