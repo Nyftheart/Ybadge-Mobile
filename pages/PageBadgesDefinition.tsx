@@ -52,7 +52,7 @@ export default function PageBadgesDefinition() {
           width={21}
           height={14}
           alt='logo'
-          className='ml-6'
+          className='ml-6 z-50'
         />
       </Link>
 

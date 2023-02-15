@@ -1,9 +1,25 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Image from 'next/image'
 import Link from "next/link";
 import PageBadgesCompte from "./PageBadgesCompte";
 
 export default function PageBadges() {
+    type resultProps = {
+        email: string;
+    };
+    const [result, setResult] = useState<resultProps[]>([]);
+
+    useEffect(() => {
+        const api = async () => {
+            const data = await fetch("https://ybadges.azurewebsites.net/api/Users", {
+                method: "GET"
+            });
+            const jsonData = await data.json();
+            setResult(jsonData.results);
+        };
+
+        api();
+    }, []);
     return (
         <div className=' bg-Background min-h-screen '>
 
