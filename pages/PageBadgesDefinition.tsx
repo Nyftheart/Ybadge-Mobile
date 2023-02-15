@@ -47,7 +47,7 @@ export default function PageBadgesDefinition() {
   return (
     <div className={'bg-Background min-h-screen pt-20'}>
         <div className='h-80 mt-10'>
-            <div className='fixed h-screen z-40 w-screen top-0 left-0 touch-none'>
+            <div className='fixed h-80 z-40 w-screen top-0 left-0 touch-none'>
                 <Canvas
                     onTouchEnd={() => setIsMouseDown(false)}
                     onPointerUp={() => setIsMouseDown(false)}
