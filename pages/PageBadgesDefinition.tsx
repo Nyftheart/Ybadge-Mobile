@@ -46,6 +46,18 @@ export default function PageBadgesDefinition() {
 
   return (
     <div className={'bg-Background min-h-screen pt-20'}>
+        <div className='h-80 mt-10'>
+            <div className='fixed h-screen z-40 w-screen top-0 left-0 touch-none'>
+                <Canvas
+                    onTouchEnd={() => setIsMouseDown(false)}
+                    onPointerUp={() => setIsMouseDown(false)}
+                    shadows={{ type: BasicShadowMap }}
+                    camera={{ position: [0, 0, 6.5] }}
+                >
+                    <Scene isMouseDown={isMouseDown} setIsMouseDown={setIsMouseDown} />
+                </Canvas>
+            </div>
+        </div>
       <Link className='relative z-0 select-all' href='/PageBadges'>
         <img
           src='/arrow.png'
@@ -56,18 +68,7 @@ export default function PageBadgesDefinition() {
         />
       </Link>
 
-      <div className='h-80 mt-10'>
-        <div className='fixed h-screen z-40 w-screen top-0 left-0 touch-none'>
-          <Canvas
-            onTouchEnd={() => setIsMouseDown(false)}
-            onPointerUp={() => setIsMouseDown(false)}
-            shadows={{ type: BasicShadowMap }}
-            camera={{ position: [0, 0, 6.5] }}
-          >
-            <Scene isMouseDown={isMouseDown} setIsMouseDown={setIsMouseDown} />
-          </Canvas>
-        </div>
-      </div>
+
 
       <div
         className={
