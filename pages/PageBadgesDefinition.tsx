@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
-import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber'
+import { Canvas, useLoader } from '@react-three/fiber'
 import Badge from '../components/Badge_list_turn_temp'
-import { BasicShadowMap, Vector3, Object3D } from 'three'
-import { Stats } from '@react-three/drei'
+import { BasicShadowMap, Vector3 } from 'three'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
 
@@ -35,7 +33,7 @@ function Scene({ isMouseDown, setIsMouseDown }: any) {
       <Badge
         setIsMouseDown={setIsMouseDown}
         isMouseDown={isMouseDown}
-        initialPosition={new Vector3(0, 2, 0)}
+        initialPosition={new Vector3(0, 1, 0)}
         object={object}
         animated={true}
       />
@@ -48,7 +46,7 @@ export default function PageBadgesDefinition() {
 
   return (
     <div className={'bg-Background min-h-screen pt-20'}>
-      <Link href='/PageBadges'>
+      <Link className='relative z-10 select-all' href='/PageBadges'>
         <img
           src='/arrow.png'
           width={21}
@@ -59,15 +57,14 @@ export default function PageBadgesDefinition() {
       </Link>
 
       <div className='h-80 mt-10'>
-        <div className='fixed h-screen w-screen top-0 left-0 touch-none'>
+        <div className='fixed h-screen z-0 w-screen top-0 left-0 touch-none'>
           <Canvas
             onTouchEnd={() => setIsMouseDown(false)}
             onPointerUp={() => setIsMouseDown(false)}
             shadows={{ type: BasicShadowMap }}
-            camera={{ position: [0, 0, 8] }}
+            camera={{ position: [0, 0, 6.5] }}
           >
             <Scene isMouseDown={isMouseDown} setIsMouseDown={setIsMouseDown} />
-            <Stats />
           </Canvas>
         </div>
       </div>
@@ -82,7 +79,7 @@ export default function PageBadgesDefinition() {
 
       <p
         className={
-          'select-none text-Text text-center text-orange-500  p-8 w-full text-sm font-light font-poppins'
+          'select-none text-Text text-center text-orange-500 w-full text-sm font-light font-poppins'
         }
       >
         {' '}

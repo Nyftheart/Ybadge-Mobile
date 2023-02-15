@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
 <div>
     <div className="visible md:hidden xl:hidden lg:hidden">
-      {/* <SplashScreen duration={2500} /> */}
+      <SplashScreen duration={2500} />
       <div className='content'>
         <Component {...pageProps} />
       </div>
