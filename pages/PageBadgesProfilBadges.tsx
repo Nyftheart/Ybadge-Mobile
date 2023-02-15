@@ -18,7 +18,7 @@ export default function PageBadgesProfilBadgdes() {
                         width={40}
                         height={40}
                         alt='logo'
-                        className='m-auto'
+                        className='m-auto opacity-30'
                     />
                 </Link>
                 <Link href="#">
@@ -60,7 +60,7 @@ export default function PageBadgesProfilBadgdes() {
 
 
                 <div className={"flex justify-between items-center"}>
-                    <div className={"text-Text text-orange-500 ml-6 MediumChill"}>MA COLLECTION
+                    <div className={"text-Text text-orange-500 ml-6 MediumChill text-lg"}>MA COLLECTION
                     </div>
                     <div className="flex bg-Search rounded-2xl px-4 py-2 ml-14 mr-6  justify-items-start">
                         <img

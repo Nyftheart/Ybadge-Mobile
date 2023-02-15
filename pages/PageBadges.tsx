@@ -61,7 +61,7 @@ export default function PageBadges() {
                     width={28}
                     height={40}
                     alt='logo'
-                    className='m-auto'
+                    className='m-auto opacity-30'
                 />
                 </Link>
 
@@ -88,7 +88,7 @@ export default function PageBadges() {
                 </Link>
             </div>
             <div>
-                <div className={"text-Text mx-7 mt-12 MediumChill"}>Badges Etudiants</div>
+                <div className={"text-Text mx-7 mt-12 MediumChill"}>Badges Events</div>
                 <Link href="/PageBadgesDefinition">
                 <div className={"flex justify-between mt-6 mx-7"}>
                     <Image src="/imgBadgeSlotAltered.png" width={57} height={80} alt="badge-placeholder" className=""/>
@@ -109,7 +109,7 @@ export default function PageBadges() {
                 </Link>
             </div>
             <div>
-                <div className={"text-Text mx-7 mt-12 MediumChill"}>Badges Prouesses</div>
+                <div className={"text-Text mx-7 mt-12 MediumChill"}>Badges Speciaux</div>
                 <Link href="/PageBadgesDefinition">
                 <div className={"flex justify-between mt-6 mx-7"}>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>

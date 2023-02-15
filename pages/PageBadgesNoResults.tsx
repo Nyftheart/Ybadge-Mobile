@@ -21,7 +21,7 @@ export default function PageBadgesNoResults() {
                             width={125}
                             height={80}
                             alt='logo'
-                            className='m-auto pt-10 pb-8'
+                            className='m-auto pt-10'
                         />
                     </div>
                 </div>
