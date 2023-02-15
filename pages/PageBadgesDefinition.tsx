@@ -46,7 +46,7 @@ export default function PageBadgesDefinition() {
 
   return (
     <div className={'bg-Background min-h-screen pt-20'}>
-      <Link className='relative z-10 select-all' href='/PageBadges'>
+      <Link className='relative z-0 select-all' href='/PageBadges'>
         <img
           src='/arrow.png'
           width={21}
@@ -57,7 +57,7 @@ export default function PageBadgesDefinition() {
       </Link>
 
       <div className='h-80 mt-10'>
-        <div className='fixed h-screen z-0 w-screen top-0 left-0 touch-none'>
+        <div className='fixed h-screen z-40 w-screen top-0 left-0 touch-none'>
           <Canvas
             onTouchEnd={() => setIsMouseDown(false)}
             onPointerUp={() => setIsMouseDown(false)}
