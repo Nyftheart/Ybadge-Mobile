@@ -14,6 +14,16 @@ module.exports = {
       colors: {
         'black-theme': '#131313'
       },
+      keyframes: {
+        stretch: {
+          '0, 100%': {
+            transform: 'scale-y-3000'
+          },
+        },
+      },
+      animation: {
+        stretch: 'stretch 2s ease-in-out infinite'
+      },
     },
     colors: {
       unselect: "rgba(255, 255, 255, 0.35)",

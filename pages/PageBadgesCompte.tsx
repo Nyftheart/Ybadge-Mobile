@@ -25,13 +25,13 @@ export default function PageBadgesCompte() {
                     className='m-auto  pb-8'
                 />
             </div>
-            <div className={"text-Text text-red-600 text-3xl flex items-center mt-10"}>
+            <div className={"text-Text text-red-600 text-3xl flex items-center justify-center mt-10"}>
                 <img
                     src='/DefaultProfile.png'
                     width={51}
                     height={54}
                     alt='logo'
-                    className='mx-9'
+                    className='mr-6'
                 />
                 <h1 className="SemiboldChill">COMPTE</h1>
 

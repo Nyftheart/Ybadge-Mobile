@@ -29,7 +29,7 @@ export default function PageBadgesRecherche() {
                         width={28}
                         height={40}
                         alt='logo'
-                        className='m-auto'
+                        className='m-auto opacity-30'
                     />
                 </Link>
 
@@ -45,7 +45,7 @@ export default function PageBadgesRecherche() {
                         className='m-auto ml-6'
                     />
                 </Link>
-                <div className="flex bg-Search rounded-2xl px-3 py-1 ml-14 mr-6 w-full justify-items-start">
+                <div className="transform transition-all hover:w-72 w-48 flex-wrap content-between bg-Search rounded-2xl px-3 py-1 ml-14 mr-6 w-full inline-flex justify-items-start">
                     <img
                         src='/Search.png'
                         width={14}
@@ -59,7 +59,7 @@ export default function PageBadgesRecherche() {
                         width={11}
                         height={11}
                         alt='logo'
-                        className='my-auto ml-52 '
+                        className='my-auto'
                     />
                 </div>
 

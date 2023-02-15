@@ -24,7 +24,7 @@ export default function PageBadgesDefinition() {
                 />
             </div>
 
-            <div className={"text-Text text-center text-red-600 text-2xl p-8 w-full SemiboldChill"}>Badges TEST</div>
+            <div className={"text-Text text-center text-red-600 text-2xl p-8 w-full SemiboldChill"}>Badge TEST</div>
 
             <p className={"text-Text text-center text-orange-500  p-8 w-full text-sm font-light font-poppins"}> Ce badge correspond à ta filière. </p>
 

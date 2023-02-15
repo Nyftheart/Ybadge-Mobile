@@ -10,10 +10,10 @@ export default function PageBadgesCompteSupprime() {
             <div className={"text-center"}>
                 <img
                     src='/Recherche_Logo_Ybadges.png'
-                    width={175}
+                    width={125}
                     height={100}
                     alt='logo'
-                    className='m-auto pt-10 pb-8'
+                    className='m-auto pt-20 pb-8'
                 />
             </div>
             <div className={"rounded-lg pb-8 bg-gray-200 mx-20 mt-10 "}>
@@ -22,7 +22,7 @@ export default function PageBadgesCompteSupprime() {
                 </Link>
             </div>
 
-            <div className={"rounded-lg  bg-gray-200 mt-44"}>
+            <div className={"rounded-lg  bg-gray-200 mt-56"}>
                 <Link href="/PageBadgesCompte">
                     <div className={"p-4 text-center text-Text text-md pt-4 text-orange-500 mb-20 underline decoration-1 underline-offset-2 font-poppins font-medium"}>ANNULER</div>
                 </Link>
