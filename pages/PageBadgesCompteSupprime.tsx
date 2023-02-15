@@ -1,18 +1,32 @@
 import React from "react";
 import Image from 'next/image'
+import Link from "next/link";
 
 export default function PageBadgesCompteSupprime() {
     return (
-        <div>
-            <div className={"text-center m-10 text-red-600 text-3xl"}> COMPTE </div>
 
-            <div className={"rounded-lg pb-8 bg-gray-200 m-8 "}>
-                <div className={"text-center text-2xl pt-4 text-orange-500 mb-20"}> SUPPRIMER </div>
-                <div className={"text-center rounded-full text-blue-800 bg-gray-400 p-2 w-48 justify-center ml-20"}> SUPPRIMER MON COMPTE </div>
 
+        <div className={"bg-Background min-h-screen"} >
+            <div className={"text-center"}>
+                <img
+                    src='/Recherche_Logo_Ybadges.png'
+                    width={175}
+                    height={100}
+                    alt='logo'
+                    className='m-auto pt-10 pb-8'
+                />
+            </div>
+            <div className={"rounded-lg pb-8 bg-gray-200 mx-20 mt-10 "}>
+                <Link href="/Login">
+                    <div className={"border rounded-full text-center text-Text text-md py-2 text-orange-500 mb-20 font-poppins font-bold"}> SUPPRIMER COMPTE</div>
+                </Link>
             </div>
 
-            <div className={"text-center text-lg text-blue-800"}> DECONNEXION </div>
+            <div className={"rounded-lg  bg-gray-200 mt-44"}>
+                <Link href="/PageBadgesCompte">
+                    <div className={"p-4 text-center text-Text text-md pt-4 text-orange-500 mb-20 underline decoration-1 underline-offset-2 font-poppins font-medium"}>ANNULER</div>
+                </Link>
+            </div>
 
 
 

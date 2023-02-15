@@ -1,9 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base{
-    input.password-mask {
-        font-family: "text-security-disc";
-        -webkit-text-security: disc;
-    }
+@layer base {
+  input.password-mask {
+    font-family: 'text-security-disc';
+    -webkit-text-security: disc;
+  }
+}
+
+@font-face {
+  font-family: "ChillaxSemi";
+  src: url('../Font/Chillax/Chillax-Semibold.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: "ChillaxMedium";
+  src: url('../Font/Chillax/Chillax-Medium.ttf');
+  font-weight: normal;
+}
+
+.MediumChill{
+  font-family: ChillaxMedium;
+}
+
+.SemiboldChill{
+  font-family: ChillaxSemi;
+}
+
+.splash-screen-enter {
+  opacity: 0;
+}
+
+.splash-screen-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.splash-screen-exit {
+  opacity: 1;
+}
+
+.splash-screen-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
 }
