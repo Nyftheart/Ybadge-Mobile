@@ -1,35 +1,36 @@
 import { useFrame } from '@react-three/fiber'
 
 import { Center, Text3D } from '@react-three/drei'
-import { Euler, MeshPhongMaterial, Vector3 } from 'three'
+import { Euler, MeshPhongMaterial } from 'three'
 import { useState } from 'react'
 import { Motion, spring, PlainStyle } from 'react-motion'
 
-export default function Badge({ isMouseDown, initialPosition, object }: any) {
-  const [animate, setAnimate] = useState(false)
+export default function Badge({
+  isMouseDown,
+  initialPosition,
+  object,
+  animated = false,
+  setIsMouseDown = null
+}: any) {
   const [position, setPosition] = useState(initialPosition)
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 })
   const [pointer, setPointer] = useState({ x: 0, y: 0 })
+  const [badgeIsTurned, setBadgeIsTurned] = useState(false)
 
   useFrame(({ pointer: { x, y } }) => {
-    if (animate) setPointer({ x, y })
+    if (animated) setPointer({ x, y: y - 0.75 })
   })
 
-  const toggleBadge = () => {
-    if (!animate) {
-      setPosition(new Vector3(0, 0, 0))
-      setAnimate(true)
-    } else {
-      // setPosition(initialPosition)
-      setRotation({ x: 0, y: rotation.y + Math.PI, z: 0 })
-    }
-    // else setAnimate(false)
+  const turnBadge = () => {
+    setBadgeIsTurned(!badgeIsTurned)
+
+    setRotation({ x: 0, y: rotation.y + Math.PI, z: 0 })
   }
 
   const interpolate = (interpolated: PlainStyle) =>
     new Euler(interpolated.x, interpolated.y, interpolated.z)
 
-  if (animate) {
+  if (animated) {
     return (
       <Motion
         defaultStyle={rotation}
@@ -41,7 +42,7 @@ export default function Badge({ isMouseDown, initialPosition, object }: any) {
                 z: spring(rotation.z + rotation.z)
               }
             : {
-                x: spring(rotation.x),
+                x: spring(rotation.x + 0.3),
                 y: spring(rotation.y),
                 z: spring(rotation.z)
               }
@@ -49,7 +50,12 @@ export default function Badge({ isMouseDown, initialPosition, object }: any) {
       >
         {(interpolated) => (
           <group
-            onDoubleClick={() => toggleBadge()}
+            onPointerDown={() => {
+              console.log('test');
+              
+              setIsMouseDown(true)
+            }}
+            onDoubleClick={() => turnBadge()}
             position={position}
             rotation={interpolate(interpolated)}
           >
@@ -93,7 +99,7 @@ export default function Badge({ isMouseDown, initialPosition, object }: any) {
       >
         {(interpolated) => (
           <group
-            onDoubleClick={() => toggleBadge()}
+            onDoubleClick={() => turnBadge()}
             position={position}
             rotation={interpolate(interpolated)}
           >
