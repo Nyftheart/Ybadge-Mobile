@@ -35,7 +35,7 @@ export default function PageBadgesRecherche() {
 
             </div>
 
-            <div className="flex items-center mb-10">
+            <div className="flex items-center mb-10 flex-wrap justify-between">
                 <Link href="/PageBadges">
                     <img
                         src='/arrow.png'
@@ -45,7 +45,7 @@ export default function PageBadgesRecherche() {
                         className='m-auto ml-6'
                     />
                 </Link>
-                <div className="transform transition-all hover:w-72 w-48 flex-wrap content-between bg-Search rounded-2xl px-3 py-1 ml-14 mr-6 w-full inline-flex justify-items-start">
+                <div className="transform transition-all hover:w-72 w-48 bg-Search rounded-2xl px-3 py-1 ml-14 mr-6 w-full inline-flex justify-items-start">
                     <img
                         src='/Search.png'
                         width={14}
@@ -54,14 +54,14 @@ export default function PageBadgesRecherche() {
                         className='my-auto'
                     />
                     <p className="text-Text ml-3 font-light font-poppins">la</p>
-                    <img
-                        src='/cross.png'
-                        width={11}
-                        height={11}
-                        alt='logo'
-                        className='my-auto'
-                    />
                 </div>
+                <img
+                    src='/cross.png'
+                    width={11}
+                    height={11}
+                    alt='logo'
+                    className='my-auto ml-28 absolute left-64'
+                />
 
             </div>
 
