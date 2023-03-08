@@ -36,7 +36,7 @@ dirLight.shadow.camera.near = 0.1
 dirLight.shadow.camera.far = 40
 scene.add(dirLight)
 
-const loader = new THREE.OBJLoader()
+const loader = new THREE.FBXLoader()
 let badge = new THREE.Object3D()
 
 let enableMouseTrack = false
@@ -75,11 +75,11 @@ new THREE.MTLLoader()
   .load('badge_base.mtl', function (materials) {
     materials.preload()
 
-    new THREE.OBJLoader()
+    new THREE.FBXLoader()
       .setMaterials(materials)
       .setPath('assets/')
       .load(
-        'badge_base.obj',
+        'badge_base.fbx',
         function (object) {
           badge = object
           group.add(badge)

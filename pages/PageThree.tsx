@@ -7,16 +7,16 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
 
 function Scene({ isMouseDown }: any) {
-  const materials = useLoader(MTLLoader, '/assets/three/badge/badge.mtl')
+  const materials = useLoader(MTLLoader, '/assets/three/badge/logo.mtl')
   const object = useLoader(
     OBJLoader,
-    '/assets/three/badge/badge.obj',
+    '/assets/three/badge/logo_noir.obj',
     (loader: any) => {
       materials.preload()
       loader.setMaterials(materials)
     }
   )
-  object.rotation.y = Math.PI / 2
+  // object.rotation.y = Math.PI / 2
 
   const Badges = []
 
