@@ -109,7 +109,7 @@ export default function PageBadges() {
                 </Link>
             </div>
             <div>
-                <div className={"text-Text mx-7 mt-12 MediumChill"}>Badges Speciaux</div>
+                <div className={"text-Text mx-7 mt-12 MediumChill"}>Badges Spéciaux</div>
                 <Link href="/PageBadgesDefinition">
                 <div className={"flex justify-between mt-6 mx-7"}>
                     <Image src="/imgBadgeSlotNormal.png" width={57} height={80} alt="badge-placeholder" className=""/>
