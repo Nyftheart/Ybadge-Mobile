@@ -9,7 +9,7 @@ export default function PageBadgesCompteSupprime() {
         <div className={"bg-Background min-h-screen"} >
             <div className={"text-center"}>
                 <img
-                    src='/Recherche_Logo_Ybadges.png'
+                    src='/LOGO_TYPO_BLANC.png'
                     width={125}
                     height={100}
                     alt='logo'

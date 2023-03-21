@@ -18,7 +18,7 @@ export default function PageBadgesCompte() {
                     />
                 </Link>
                 <img
-                    src='/Recherche_Logo_Ybadges.png'
+                    src='/LOGO_TYPO_BLANC.png'
                     width={125}
                     height={100}
                     alt='logo'

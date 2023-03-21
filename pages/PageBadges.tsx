@@ -24,7 +24,7 @@ export default function PageBadges() {
         <div className=' bg-Background min-h-screen '>
 
             <img
-                src='/Recherche_Logo_Ybadges.png'
+                src='/LOGO_TYPO_BLANC.png'
                 width={125}
                 height={80}
                 alt='logo'
