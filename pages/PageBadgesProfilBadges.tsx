@@ -47,7 +47,7 @@ export default function PageBadgesProfilBadgdes() {
 
                 <div className={""}>
                     <img
-                        src='/Recherche_Logo_Ybadges.png'
+                        src='/LOGO_TYPO_BLANC.png'
                         width={100}
                         height={100}
                         alt='logo'
@@ -62,7 +62,7 @@ export default function PageBadgesProfilBadgdes() {
                 <div className={"flex justify-between items-center"}>
                     <div className={"text-Text text-orange-500 ml-6 MediumChill text-lg"}>MA COLLECTION
                     </div>
-                    <div className="flex bg-Search rounded-2xl px-4 py-2 ml-14 mr-6  justify-items-start">
+                    <div className=" transform transition-all hover:w-36 w-12 flex bg-Search rounded-2xl px-4 py-2 ml-14 mr-6  justify-items-start">
                         <img
                             src='/Search.png'
                             width={14}
@@ -70,7 +70,7 @@ export default function PageBadgesProfilBadgdes() {
                             alt='logo'
                             className='my-auto'
                         />
-                        <p className="text-unselect ml-3 font-light font-poppins mr-9 font-poppins text-xs">Recherche</p>
+                        <p className="text-unselect ml-3 font-light font-poppins mr-9 font-poppins text-xs"></p>
                     </div>
                 </div>
 
