@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "img": "/logo.png",
+      "locked": false,
+      "name": "badge-placeholder",
+      "id": 1
+    },
+    {
+      "img": "/logo_locked.png",
+      "locked": true,
+      "name": "badge-placeholder",
+      "id": 2
+    },
+    {
+      "img": "/logo.png",
+      "locked": false,
+      "name": "badge-placeholder",
+      "id": 3
+    },
+    {
+      "img": "/logo_locked.png",
+      "locked": true,
+      "name": "badge-placeholder",
+      "id": 4
+    },
+    {
+      "img": "/logo_locked.png",
+      "locked": true,
+      "name": "badge-placeholder",
+      "id": 5
+    },
+    {
+      "img": "/logo.png",
+      "locked": false,
+      "name": "badge-placeholder",
+      "id": 6
+    },
+    {
+      "img": "/logo.png",
+      "locked": false,
+      "name": "badge-placeholder",
+      "id": 7
+    },
+    {
+      "img": "/logo_locked.png",
+      "locked": true,
+      "name": "badge-placeholder",
+      "id": 8
+    },
+    {
+      "img": "/logo_locked.png",
+      "locked": true,
+      "name": "badge-placeholder",
+      "id": 9
+    },
+    {
+      "img": "/logo_locked.png",
+      "locked": true,
+      "name": "badge-placeholder",
+      "id": 10
+    }
+  ]
+}

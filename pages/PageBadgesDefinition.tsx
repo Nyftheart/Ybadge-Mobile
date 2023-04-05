@@ -9,6 +9,14 @@ export default function PageBadgesDefinition() {
     '/assets/three/badges/logo'
   )
 
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const isLocked = urlParams.get('isLocked')
+    if (isLocked === 'true') {
+      setIsLocked(true)
+    }
+  }, [])
+
   return (
     <div className={'bg-Background min-h-screen pt-20'}>
       <Link className='relative z-0 select-all' href='/PageBadges'>

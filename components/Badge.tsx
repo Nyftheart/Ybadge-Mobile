@@ -52,9 +52,10 @@ function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderP
     materials.preload()
     loader.setMaterials(materials)
   })
+  object.scale.set(2, 2, 2)
 
   useFrame(({ pointer: { x, y } }) => {
-    setPointer({ x: x, y: y - 0.7 })
+    setPointer({ x: x, y: y - 1 })
   })
 
   const turnBadge = () => {
