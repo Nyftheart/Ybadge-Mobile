@@ -1,8 +1,8 @@
 import { useFrame, useLoader, Canvas } from '@react-three/fiber'
 
 import { Center, Text3D } from '@react-three/drei'
-import { Euler, MeshPhongMaterial } from 'three'
 import { useEffect, useState } from 'react'
+import { Euler, MeshPhongMaterial, Vector3 } from 'three'
 import { Motion, spring, PlainStyle } from 'react-motion'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
@@ -27,60 +27,41 @@ export default function Badge({
       onTouchEnd={() => setIsMouseDown(false)}
       onPointerUp={() => setIsMouseDown(false)}
       shadows={{ type: BasicShadowMap }}
-      camera={{ position: [0, 0, 6.5] }}
-    >
-      <directionalLight
-        color={[255, 255, 255]}
-        intensity={0.01}
-        position={[-10, 20, 25]}
-      />
-      <hemisphereLight
-        color={0xffffff}
-        groundColor={0x000000}
-        position={[0, 20, 0]}
-      />
+      camera={{ position: [0, 0, 6.5] }}>
+      <directionalLight color={isLocked ? [0, 0, 0] : [255, 255, 255]} intensity={0.01} position={[0, 0, 25]} />
       <BadgeModel
+        isLockedBadge={isLocked}
         setIsMouseDown={setIsMouseDown}
         isMouseDown={isMouseDown}
         initialPosition={initialPosition}
-        objectFolderPath={newObjectFolderPath}
+        objectFolderPath={objectFolderPath}
         animated={animated}
       />
     </Canvas>
   )
 }
 
-function BadgeModel({
-  isMouseDown,
-  initialPosition,
-  objectFolderPath,
-  animated = false,
-  setIsMouseDown = null
-}: any) {
+function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderPath, animated = false, setIsMouseDown = null }: any) {
   const [position, setPosition] = useState(initialPosition)
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 })
   const [pointer, setPointer] = useState({ x: 0, y: 0 })
   const [badgeIsTurned, setBadgeIsTurned] = useState(false)
 
-  const materials = useLoader(MTLLoader, `${objectFolderPath}/material.mtl`)
-  const object = useLoader(
-    OBJLoader,
-    `${objectFolderPath}/object.obj`,
-    (loader: any) => {
-      materials.preload()
-      loader.setMaterials(materials)
-    }
-  )
-  object.scale.set(2, 2, 2)
+  const materials = useLoader(MTLLoader, `${objectFolderPath}/material${isLockedBadge ? '_locked' : ''}.mtl`)
+  const object = useLoader(OBJLoader, `${objectFolderPath}/object${isLockedBadge ? '_locked' : ''}.obj`, (loader: any) => {
+    materials.preload()
+    loader.setMaterials(materials)
+  })
 
   useFrame(({ pointer: { x, y } }) => {
-    if (animated) setPointer({ x, y: y - 0.75 })
+    setPointer({ x: x, y: y - 0.7 })
   })
 
   const turnBadge = () => {
-    setBadgeIsTurned(!badgeIsTurned)
-
-    setRotation({ x: 0, y: rotation.y + Math.PI, z: 0 })
+    if (!isLockedBadge) {
+      setBadgeIsTurned(!badgeIsTurned)
+      setRotation({ x: 0, y: rotation.y + Math.PI, z: 0 })
+    }
   }
 
   const interpolate = (interpolated: PlainStyle) =>
@@ -98,7 +79,7 @@ function BadgeModel({
                 z: spring(rotation.z + rotation.z)
               }
             : {
-                x: spring(rotation.x + 0.3),
+                x: spring(rotation.x + 0.5),
                 y: spring(rotation.y),
                 z: spring(rotation.z)
               }
@@ -146,18 +127,14 @@ function BadgeModel({
       <Motion
         defaultStyle={rotation}
         style={{
-          x: spring(rotation.x),
+          x: spring(rotation.x + 0.5),
           y: spring(rotation.y),
           z: spring(rotation.z)
         }}
       >
         {(interpolated) => (
-          <group
-            onDoubleClick={() => turnBadge()}
-            position={position}
-            rotation={interpolate(interpolated)}
-          >
-            <Center position={[0, 0, -0.275]}>
+          <group onDoubleClick={() => turnBadge()} position={position} rotation={interpolate(interpolated)}>
+            {/* <Center position={[0, 0, -0.275]}>
               <Text3D
                 font={'/assets/three/montserrat.json'}
                 size={0.2}
@@ -179,7 +156,7 @@ function BadgeModel({
                   '-' +
                   new Date().getFullYear()}
               </Text3D>
-            </Center>
+            </Center> */}
             <primitive object={object} />
           </group>
         )}
