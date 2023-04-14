@@ -88,8 +88,11 @@ function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderP
                   <planeBufferGeometry args={[3, 1]} />
                   <meshBasicMaterial color="white" />
                 </mesh>
-                <Center>
+                <Center matrixWorldAutoUpdate={false} getObjectsByProperty={null}>
                   <Text3D
+                    matrixWorldAutoUpdate={false}
+                    getObjectsByProperty={null}
+                    getVertexPosition={null}
                     font={'/assets/three/montserrat.json'}
                     size={0.3}
                     height={0.01}
