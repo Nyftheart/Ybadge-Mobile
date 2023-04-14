@@ -84,7 +84,7 @@ function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderP
             position={position}
             rotation={interpolate(interpolated)}>
             {displayText && (
-              <group name="badge-date" position={[0, 0, -1]}>
+              <group name="badge-date" position={[0, 0, -2]}>
                 <mesh rotation={new Euler(0, Math.PI, 0)}>
                   <planeBufferGeometry args={[3, 1]} />
                   <meshBasicMaterial color="white" />

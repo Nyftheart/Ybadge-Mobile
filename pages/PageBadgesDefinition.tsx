@@ -28,7 +28,7 @@ export default function PageBadgesDefinition() {
 
       <div className="h-96 mb-10">
         <div className="fixed z-40 h-screen w-screen touch-none">
-          <Badge initialPosition={new Vector3(0, 2, -10)} objectFolderPath={objectFolderPath} isLocked={isLocked} badgeName={badgeName} />
+          <Badge initialPosition={new Vector3(0, 1, -10)} objectFolderPath={objectFolderPath} isLocked={isLocked} badgeName={badgeName} />
         </div>
       </div>
 
