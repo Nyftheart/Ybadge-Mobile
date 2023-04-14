@@ -8,7 +8,7 @@ import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { BasicShadowMap } from 'three'
 
-export default function Badge({ initialPosition, objectFolderPath, isLocked = false, badgeScale, displayText = true }: any) {
+export default function Badge({ initialPosition, objectFolderPath, isLocked = false, badgeScale, displayText = true, badgeName = 'logo' }: any) {
   const [isMouseDown, setIsMouseDown] = useState(false)
 
   return (
@@ -26,19 +26,20 @@ export default function Badge({ initialPosition, objectFolderPath, isLocked = fa
         objectFolderPath={objectFolderPath}
         badgeScale={badgeScale}
         displayText={displayText}
+        badgeName={badgeName}
       />
     </Canvas>
   )
 }
 
-function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderPath, setIsMouseDown = null, badgeScale = 1, displayText }: any) {
+function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderPath, setIsMouseDown = null, badgeScale = 1, displayText, badgeName }: any) {
   const [position, setPosition] = useState(initialPosition)
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 })
   const [pointer, setPointer] = useState({ x: 0, y: 0 })
   const [badgeIsTurned, setBadgeIsTurned] = useState(false)
 
-  const materials = useLoader(MTLLoader, `${objectFolderPath}/material${isLockedBadge ? '_locked' : ''}.mtl`)
-  const object = useLoader(OBJLoader, `${objectFolderPath}/object${isLockedBadge ? '_locked' : ''}.obj`, (loader: any) => {
+  const materials = useLoader(MTLLoader, `${objectFolderPath}/${badgeName}/material${isLockedBadge ? '_locked' : ''}.mtl`)
+  const object = useLoader(OBJLoader, `${objectFolderPath}/${badgeName}/object${isLockedBadge ? '_locked' : ''}.obj`, (loader: any) => {
     materials.preload()
     loader.setMaterials(materials)
   })

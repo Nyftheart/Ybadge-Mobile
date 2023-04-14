@@ -1,63 +1,53 @@
 {
   "data": [
     {
-      "img": "/logo.png",
       "locked": false,
-      "name": "badge-placeholder",
+      "name": "logo",
       "id": 1
     },
     {
-      "img": "/logo_locked.png",
       "locked": true,
-      "name": "badge-placeholder",
+      "name": "logo",
       "id": 2
     },
     {
-      "img": "/logo.png",
       "locked": false,
-      "name": "badge-placeholder",
+      "name": "logo",
       "id": 3
     },
     {
-      "img": "/logo_locked.png",
       "locked": true,
-      "name": "badge-placeholder",
+      "name": "logo",
       "id": 4
     },
     {
-      "img": "/logo_locked.png",
       "locked": true,
-      "name": "badge-placeholder",
+      "name": "logo",
       "id": 5
     },
     {
-      "img": "/logo.png",
       "locked": false,
-      "name": "badge-placeholder",
+      "name": "logo",
       "id": 6
     },
     {
-      "img": "/logo.png",
       "locked": false,
-      "name": "badge-placeholder",
+      "name": "logo",
       "id": 7
     },
     {
-      "img": "/logo_locked.png",
       "locked": true,
-      "name": "badge-placeholder",
+      "name": "logo",
       "id": 8
     },
     {
-      "img": "/logo_locked.png",
       "locked": true,
-      "name": "badge-placeholder",
+      "name": "logo",
       "id": 9
     },
     {
-      "img": "/logo_locked.png",
       "locked": true,
-      "name": "badge-placeholder",
+      "name": "logo",
       "id": 10
     }
   ]
