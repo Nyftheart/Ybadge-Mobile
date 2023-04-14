@@ -1,26 +1,15 @@
 import { useFrame, useLoader, Canvas } from '@react-three/fiber'
 
 import { Center, Text3D } from '@react-three/drei'
-import { useEffect, useState } from 'react'
-import { Euler, MeshPhongMaterial, Vector3 } from 'three'
+import { useState } from 'react'
+import { Color, Euler, FrontSide, MeshPhongMaterial, Vector3 } from 'three'
 import { Motion, spring, PlainStyle } from 'react-motion'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { BasicShadowMap } from 'three'
 
-export default function Badge({
-  initialPosition,
-  objectFolderPath,
-  isLocked = false,
-  animated = false
-}: any) {
+export default function Badge({ initialPosition, objectFolderPath, isLocked = false, badgeScale, displayText = true }: any) {
   const [isMouseDown, setIsMouseDown] = useState(false)
-  const [newObjectFolderPath, setNewObjectFolderPath] =
-    useState(objectFolderPath)
-
-  useEffect(() => {
-    if (isLocked) setNewObjectFolderPath(`${objectFolderPath}_locked`)
-  })
 
   return (
     <Canvas
@@ -35,13 +24,14 @@ export default function Badge({
         isMouseDown={isMouseDown}
         initialPosition={initialPosition}
         objectFolderPath={objectFolderPath}
-        animated={animated}
+        badgeScale={badgeScale}
+        displayText={displayText}
       />
     </Canvas>
   )
 }
 
-function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderPath, animated = false, setIsMouseDown = null }: any) {
+function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderPath, setIsMouseDown = null, badgeScale = 1, displayText }: any) {
   const [position, setPosition] = useState(initialPosition)
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 })
   const [pointer, setPointer] = useState({ x: 0, y: 0 })
@@ -52,7 +42,7 @@ function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderP
     materials.preload()
     loader.setMaterials(materials)
   })
-  object.scale.set(2, 2, 2)
+  object.scale.set(2 * badgeScale, 2 * badgeScale, 2 * badgeScale)
 
   useFrame(({ pointer: { x, y } }) => {
     setPointer({ x: x, y: y - 1 })
@@ -65,10 +55,9 @@ function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderP
     }
   }
 
-  const interpolate = (interpolated: PlainStyle) =>
-    new Euler(interpolated.x, interpolated.y, interpolated.z)
+  const interpolate = (interpolated: PlainStyle) => new Euler(interpolated.x, interpolated.y, interpolated.z)
 
-  if (animated) {
+  if (!isLockedBadge) {
     return (
       <Motion
         defaultStyle={rotation}
@@ -84,8 +73,7 @@ function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderP
                 y: spring(rotation.y),
                 z: spring(rotation.z)
               }
-        }
-      >
+        }>
         {(interpolated) => (
           <group
             onPointerDown={() => {
@@ -93,31 +81,34 @@ function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderP
             }}
             onDoubleClick={() => turnBadge()}
             position={position}
-            rotation={interpolate(interpolated)}
-          >
-            {/* <Center position={[0, 0, -0.275]}>
-              <Text3D
-                font={'/assets/three/montserrat.json'}
-                size={0.2}
-                height={0.01}
-                bevelEnabled={true}
-                bevelThickness={0.001}
-                bevelSize={0.001}
-                bevelOffset={0}
-                bevelSegments={1}
-                material={[
-                  new MeshPhongMaterial({ color: 0x000000 }), // front
-                  new MeshPhongMaterial({ color: 0x000000 }) // side
-                ]}
-                rotation-y={Math.PI}
-              >
-                {new Date().getDate() +
-                  '-' +
-                  (new Date().getMonth() + 1) +
-                  '-' +
-                  new Date().getFullYear()}
-              </Text3D>
-            </Center> */}
+            rotation={interpolate(interpolated)}>
+            {displayText && (
+              <group name="badge-date" position={[0, 0, -1]}>
+                <mesh rotation={new Euler(0, Math.PI, 0)}>
+                  <planeBufferGeometry args={[3, 1]} />
+                  <meshBasicMaterial color="white" />
+                </mesh>
+                <Center>
+                  <Text3D
+                    font={'/assets/three/montserrat.json'}
+                    size={0.3}
+                    height={0.01}
+                    bevelEnabled={true}
+                    bevelThickness={0.001}
+                    bevelSize={0.001}
+                    bevelOffset={0}
+                    bevelSegments={1}
+                    material={new MeshPhongMaterial({ color: 0x000000 })}
+                    rotation-y={Math.PI}>
+                    {new Date().getDate() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getFullYear()}
+                  </Text3D>
+                </Center>
+                <mesh position={[0, 0, 0.02]}>
+                  <planeBufferGeometry args={[3, 1]} />
+                  <meshBasicMaterial color="rgb(37,37,37)" />
+                </mesh>
+              </group>
+            )}
             <primitive object={object} />
           </group>
         )}
@@ -131,33 +122,9 @@ function BadgeModel({ isLockedBadge, isMouseDown, initialPosition, objectFolderP
           x: spring(rotation.x + 0.5),
           y: spring(rotation.y),
           z: spring(rotation.z)
-        }}
-      >
+        }}>
         {(interpolated) => (
-          <group onDoubleClick={() => turnBadge()} position={position} rotation={interpolate(interpolated)}>
-            {/* <Center position={[0, 0, -0.275]}>
-              <Text3D
-                font={'/assets/three/montserrat.json'}
-                size={0.2}
-                height={0.01}
-                bevelEnabled={true}
-                bevelThickness={0.001}
-                bevelSize={0.001}
-                bevelOffset={0}
-                bevelSegments={1}
-                material={[
-                  new MeshPhongMaterial({ color: 0x000000 }), // front
-                  new MeshPhongMaterial({ color: 0x000000 }) // side
-                ]}
-                rotation-y={Math.PI}
-              >
-                {new Date().getDate() +
-                  '-' +
-                  (new Date().getMonth() + 1) +
-                  '-' +
-                  new Date().getFullYear()}
-              </Text3D>
-            </Center> */}
+          <group position={position} rotation={interpolate(interpolated)}>
             <primitive object={object} />
           </group>
         )}

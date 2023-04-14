@@ -34,7 +34,6 @@ export default function PageBadgesDefinition() {
           <Badge
             initialPosition={new Vector3(0, 2, -10)}
             objectFolderPath={objectFolderPath}
-            animated={isLocked ? false : true}
             isLocked={isLocked}
           />
         </div>

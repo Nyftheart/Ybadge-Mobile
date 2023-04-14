@@ -31,10 +31,10 @@ export default function PageBadgesProfilBadgesNoResults() {
       </div>
 
       <div className={'text-Text'}>
-        <div className={'p-4 text-center text-Text text-2xl pt-4 text-orange-500'}>Aucun resultats</div>
+        <div className={'p-4 text-center text-Text text-2xl pt-4 text-orange-500'}>Aucun résultat</div>
       </div>
 
-      <Badge initialPosition={[0, 0, 0]} objectFolderPath={'/assets/three/badges/logo'} animated={true} />
+      <Badge badgeScale={0.5} displayText={false} initialPosition={[0, 0, 0]} objectFolderPath={'/assets/three/badges/logo'} />
     </div>
   )
 }

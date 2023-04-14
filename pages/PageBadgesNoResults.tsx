@@ -13,7 +13,7 @@ export default function PageBadgesNoResults() {
         <div className={'text-Text text-center'}>
           Pas de résultats
           <div className={'m-auto'}>
-            <Badge initialPosition={[0, 0, 0]} objectFolderPath={'/assets/three/badges/logo'} animated={true} />
+            <Badge badgeScale={0.5} displayText={false} initialPosition={[0, 0, 0]} objectFolderPath={'/assets/three/badges/logo'} />
           </div>
         </div>
       </div>
