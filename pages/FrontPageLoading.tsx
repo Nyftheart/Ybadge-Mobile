@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react'
 import Image from 'next/image'
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function FrontPageLoading() {
-    return (
-        <div className="bg-[#131313]">
-            <Image src="/imgLogo.png" width={223} height={166} alt="logo" className="m-auto"/>
-
-        </div>
-
-
-
-
-
-    )
+  return (
+    <div className="bg-[#131313]">
+      <Image
+        src="/imgLogo.png"
+        width={223}
+        height={166}
+        alt="logo"
+        className="m-auto"
+      />
+    </div>
+  )
 }
