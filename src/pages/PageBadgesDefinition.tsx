@@ -24,7 +24,7 @@ export default function PageBadgesDefinition() {
 
   return (
     <div
-      className={'bg-Background min-h-screen pointer-events-none touch-none'}
+      className={'bg-background min-h-screen pointer-events-none touch-none'}
     >
       <Link href="/PageBadges">
         <img src="/assets/img/arrow.png" width={21} height={14} alt="logo" />
@@ -32,7 +32,7 @@ export default function PageBadgesDefinition() {
 
       <div
         className={
-          'select-none text-Text text-center text-red-600 text-2xl p-8 w-full SemiboldChill'
+          'select-none text-text text-center text-red-600 text-2xl p-8 w-full SemiboldChill'
         }
       >
         Badge TEST
@@ -40,7 +40,7 @@ export default function PageBadgesDefinition() {
 
       <p
         className={
-          'select-none text-Text text-center text-orange-500 w-full text-sm font-light font-poppins'
+          'select-none text-text text-center text-orange-500 w-full text-sm font-light font-poppins'
         }
       >
         Ce badge correspond à ta filière.

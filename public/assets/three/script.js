@@ -129,7 +129,6 @@ function tRotate(obj, angles, delay, pause) {
 }
 
 renderer.setSize(window.innerWidth, window.innerHeight)
-document.body.appendChild(renderer.domElement)
 
 camera.position.z = 0
 

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function PageBadgesProfilBadgdesEnRecherche() {
   return (
-    <div className={'bg-Background min-h-screen'}>
+    <div className={'bg-background min-h-screen'}>
       <div className={'flex justify-end mr-4'}>
         <Image
           src="/assets/img/IconParametres.png"
@@ -25,7 +25,7 @@ export default function PageBadgesProfilBadgdesEnRecherche() {
       </div>
 
       <div className={'flex justify-between mb-8'}>
-        <div className={'text-Text text-orange-500 m-4 '}>
+        <div className={'text-text text-orange-500 m-4 '}>
           <div>NOM :</div>
           <div>Prénom : </div>
           <div>Filière / Année : </div>
@@ -43,12 +43,12 @@ export default function PageBadgesProfilBadgdesEnRecherche() {
       </div>
 
       <div className={'flex justify-between'}>
-        <div className={'text-Text text-orange-500 ml-4 underline '}>
+        <div className={'text-text text-orange-500 ml-4 underline '}>
           MA COLLECTION
         </div>
         <div
           className={
-            'text-Text text-blue-600 rounded-full p-1 pl-4 pr-4 bg-gray-300 mr-4 '
+            'text-text text-blue-600 rounded-full p-1 pl-4 pr-4 bg-gray-300 mr-4 '
           }
         >
           RI

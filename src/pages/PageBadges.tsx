@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import jsonBadges from './../../public/temp-data/badges.json'
 
@@ -9,9 +8,9 @@ const Badge = ({ badge, height, width }: any) => {
     href += '&isLocked=true'
   }
 
-  let imgSrc = `/${badge.name}.png`
+  let imgSrc = `/assets/img/${badge.name}.png`
   if (badge.locked === true) {
-    imgSrc = `/${badge.name}_locked.png`
+    imgSrc = `/assets/img/${badge.name}_locked.png`
   }
 
   return (
@@ -22,27 +21,14 @@ const Badge = ({ badge, height, width }: any) => {
 }
 
 export default function PageBadges() {
-  type resultProps = {
-    email: string
-  }
-
-  const [result, setResult] = useState<resultProps[]>([])
   const [badges, setBadges] = useState<any>([])
 
   useEffect(() => {
-    // const api = async () => {
-    //     const data = await fetch("https://ybadges.azurewebsites.net/api/Users", {
-    //         method: "GET"
-    //     });
-    //     const jsonData = await data.json();
-    //     setResult(jsonData.results);
-    // };
-    // api();
     setBadges(jsonBadges.data)
   }, [])
 
   return (
-    <div className=" bg-Background min-h-screen ">
+    <div className=" bg-background min-h-screen ">
       <img
         src="/assets/img/LOGO_TYPO_BLANC.png"
         width={125}
@@ -52,7 +38,7 @@ export default function PageBadges() {
       />
       <div className=" items-center mx-6 mb-11">
         <form className=" flex items-center text-left justify-end">
-          <h1 className=" absolute text-Text left-7  text-2xl font-semibold SemiboldChill">
+          <h1 className=" absolute text-text left-7  text-2xl font-semibold SemiboldChill">
             ALL COLLECTIONS
           </h1>
           <Link href="PageBadgesRecherche">
@@ -67,7 +53,7 @@ export default function PageBadges() {
         </form>
       </div>
 
-      <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
+      <div className="bg-menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
         <Link href="#">
           <img
             src="/assets/img/Recherche_Logo_Ybadges.png"
@@ -88,7 +74,7 @@ export default function PageBadges() {
         </Link>
       </div>
       <div>
-        <div className={'text-Text mx-7 MediumChill'}>Badges Classiques</div>
+        <div className={'text-text mx-7 MediumChill'}>Badges Classiques</div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
           {badges.map((badge: any) => (
             <Badge key={badge.id} width={57} height={57} badge={badge} />
@@ -96,7 +82,7 @@ export default function PageBadges() {
         </div>
       </div>
       <div>
-        <div className={'text-Text mx-7 mt-12 MediumChill'}>Badges Events</div>
+        <div className={'text-text mx-7 mt-12 MediumChill'}>Badges Events</div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
           {badges.map((badge: any) => (
             <Badge key={badge.id} width={57} height={57} badge={badge} />
@@ -104,7 +90,7 @@ export default function PageBadges() {
         </div>
       </div>
       <div>
-        <div className={'text-Text mx-7 mt-12 MediumChill'}>
+        <div className={'text-text mx-7 mt-12 MediumChill'}>
           Badges Spéciaux
         </div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
@@ -114,7 +100,7 @@ export default function PageBadges() {
         </div>
       </div>
       <div className="pb-20">
-        <div className={'text-Text mx-7 mt-12 MediumChill'}>
+        <div className={'text-text mx-7 mt-12 MediumChill'}>
           Badges Challenge
         </div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>

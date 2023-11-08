@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function PageBadgesProfilBadgdes() {
   return (
-    <div className={'bg-Background min-h-screen justify-center'}>
+    <div className={'bg-background min-h-screen justify-center'}>
       <div className={'flex justify-end mr-14'}>
         <Link href="/PageBadgesCompte">
           <Image
@@ -16,7 +16,7 @@ export default function PageBadgesProfilBadgdes() {
           />
         </Link>
       </div>
-      <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
+      <div className="bg-menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
         <Link href="/PageBadges">
           <img
             src="/assets/img/Recherche_Logo_Ybadges.png"
@@ -48,24 +48,24 @@ export default function PageBadgesProfilBadgdes() {
       </div>
 
       <div className={'flex items-center justify-between mb-8 mt-10'}>
-        <div className={'text-Text text-orange-500 ml-6 '}>
+        <div className={'text-text text-orange-500 ml-6 '}>
           <div
             className={
-              'text-Text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2'
+              'text-text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2'
             }
           >
             GUETTA
           </div>
           <div
             className={
-              'text-Text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2'
+              'text-text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2'
             }
           >
             David
           </div>
           <div
             className={
-              'text-Text text-orange-500 MediumChill border-b w-44 mr-10 pb-2'
+              'text-text text-orange-500 MediumChill border-b w-44 mr-10 pb-2'
             }
           >
             Informatique M2
@@ -84,10 +84,10 @@ export default function PageBadgesProfilBadgdes() {
       </div>
 
       <div className={'flex justify-between items-center'}>
-        <div className={'text-Text text-orange-500 ml-6 MediumChill text-lg'}>
+        <div className={'text-text text-orange-500 ml-6 MediumChill text-lg'}>
           MA COLLECTION
         </div>
-        <div className=" transform transition-all hover:w-36 w-12 flex bg-Search rounded-2xl px-4 py-2 ml-14 mr-6  justify-items-start">
+        <div className=" transform transition-all hover:w-36 w-12 flex bg-search rounded-2xl px-4 py-2 ml-14 mr-6  justify-items-start">
           <img
             src="/assets/img/Search.png"
             width={14}

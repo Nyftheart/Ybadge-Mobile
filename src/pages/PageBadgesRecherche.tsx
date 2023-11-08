@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function PageBadgesRecherche() {
   return (
-    <div className={'bg-Background min-h-screen'}>
+    <div className={'bg-background min-h-screen'}>
       <img
         src="/assets/img/Recherche_Logo_Ybadges.png"
         width={125}
@@ -12,7 +12,7 @@ export default function PageBadgesRecherche() {
         alt="logo"
         className="m-auto pt-16 pb-8"
       />
-      <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full flex justify-around items-center">
+      <div className="bg-menu fixed h-20 -bottom-1 z-0 w-full flex justify-around items-center">
         <Link href="/PageBadges">
           <img
             src="/assets/img/Recherche_Logo_Ybadges.png"
@@ -43,7 +43,7 @@ export default function PageBadgesRecherche() {
             className="m-auto ml-6"
           />
         </Link>
-        <div className="transform transition-all hover:w-72 w-48 bg-Search rounded-2xl px-3 py-1 ml-14 mr-6 w-full inline-flex justify-items-start">
+        <div className="transform transition-all hover:w-72 w-48 bg-search rounded-2xl px-3 py-1 ml-14 mr-6 w-full inline-flex justify-items-start">
           <img
             src="/assets/img/Search.png"
             width={14}
@@ -51,7 +51,7 @@ export default function PageBadgesRecherche() {
             alt="logo"
             className="my-auto"
           />
-          <p className="text-Text ml-3 font-light font-poppins">la</p>
+          <p className="text-text ml-3 font-light font-poppins">la</p>
         </div>
         <img
           src="/assets/img/cross.png"
@@ -63,7 +63,7 @@ export default function PageBadgesRecherche() {
       </div>
 
       <div className={'rounded pb-8 bg-gray-400'}>
-        <div className={'text-Text mx-5 mt-12 MediumChill'}>
+        <div className={'text-text mx-5 mt-12 MediumChill'}>
           Badges Classiques
         </div>
         <Link href="/PageBadgesDefinition">
