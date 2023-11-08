@@ -129,7 +129,6 @@ function tRotate(obj, angles, delay, pause) {
 }
 
 renderer.setSize(window.innerWidth, window.innerHeight)
-document.body.appendChild(renderer.domElement)
 
 camera.position.z = 0
 
@@ -168,7 +167,7 @@ animate()
 // FUNCTIONS
 function addTextToBadge(targetBadge, text = new Date()) {
   text = text.getDate() + '-' + (text.getMonth() + 1) + '-' + text.getFullYear()
-  fontLoader.load('assets/montserrat.json', function (font) {
+  fontLoader.load('assets/three/montserrat.json', function (font) {
     textGeo = new THREE.TextGeometry(text, {
       font: font,
       size: 0.15,

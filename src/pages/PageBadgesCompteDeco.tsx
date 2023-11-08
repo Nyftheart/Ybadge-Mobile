@@ -1,13 +1,12 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function PageBadgesCompteDeco() {
   return (
-    <div className={'bg-Background min-h-screen'}>
+    <div className={'bg-background min-h-screen'}>
       <div className={'text-center'}>
         <img
-          src="/LOGO_TYPO_BLANC.png"
+          src="/assets/img/LOGO_TYPO_BLANC.png"
           width={125}
           height={100}
           alt="logo"
@@ -19,7 +18,7 @@ export default function PageBadgesCompteDeco() {
         <Link href="/Login">
           <div
             className={
-              ' border rounded-full text-center text-Text text-md py-2  text-orange-500 mb-20 font-poppins font-bold'
+              ' border rounded-full text-center text-text text-md py-2  text-orange-500 mb-20 font-poppins font-bold'
             }
           >
             {' '}
@@ -32,7 +31,7 @@ export default function PageBadgesCompteDeco() {
         <Link href="/PageBadgesCompte">
           <div
             className={
-              'p-4 text-center text-Text text-md pt-4 text-orange-500 mb-20 underline decoration-1 underline-offset-2 font-poppins font-medium'
+              'p-4 text-center text-text text-md pt-4 text-orange-500 mb-20 underline decoration-1 underline-offset-2 font-poppins font-medium'
             }
           >
             ANNULER

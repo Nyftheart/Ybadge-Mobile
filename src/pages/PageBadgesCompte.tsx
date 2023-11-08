@@ -1,14 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function PageBadgesCompte() {
   return (
-    <div className={'bg-Background min-h-screen'}>
+    <div className={'bg-background min-h-screen'}>
       <div className={'text-center pt-16'}>
         <Link href="/PageBadgesProfilBadges">
           <img
-            src="/arrow.png"
+            src="/assets/img/arrow.png"
             width={21}
             height={14}
             alt="logo"
@@ -16,7 +15,7 @@ export default function PageBadgesCompte() {
           />
         </Link>
         <img
-          src="/LOGO_TYPO_BLANC.png"
+          src="/assets/img/LOGO_TYPO_BLANC.png"
           width={125}
           height={100}
           alt="logo"
@@ -25,11 +24,11 @@ export default function PageBadgesCompte() {
       </div>
       <div
         className={
-          'text-Text text-red-600 text-3xl flex items-center justify-center mt-10'
+          'text-text text-red-600 text-3xl flex items-center justify-center mt-10'
         }
       >
         <img
-          src="/DefaultProfile.png"
+          src="/assets/img/DefaultProfile.png"
           width={51}
           height={54}
           alt="logo"
@@ -38,7 +37,7 @@ export default function PageBadgesCompte() {
         <h1 className="SemiboldChill">COMPTE</h1>
       </div>
 
-      <div className={'text-Text text-blue-500 ml-32 mt-8 '}>
+      <div className={'text-text text-blue-500 ml-32 mt-8 '}>
         <div className="MediumChill">GUETTA</div>
         <div className="MediumChill">David</div>
         <div className="MediumChill">Informatique M2 </div>
@@ -48,7 +47,7 @@ export default function PageBadgesCompte() {
         <Link href="/PageBadgesCompteDeco">
           <h1
             className={
-              'font-bold border rounded-full text-center text-Text text-md py-2 mt-7 font-poppins text-md'
+              'font-bold border rounded-full text-center text-text text-md py-2 mt-7 font-poppins text-md'
             }
           >
             {' '}
@@ -60,7 +59,7 @@ export default function PageBadgesCompte() {
         <Link href="/PageBadgesCompteSupprime">
           <div
             className={
-              'p-4 text-center text-Text text-md pt-4 text-orange-500 underline decoration-1 underline-offset-2 font-poppins font-medium'
+              'p-4 text-center text-text text-md pt-4 text-orange-500 underline decoration-1 underline-offset-2 font-poppins font-medium'
             }
           >
             {' '}
@@ -70,7 +69,7 @@ export default function PageBadgesCompte() {
         <div className={'rounded-lg  bg-gray-200'}>
           <div
             className={
-              'text-Text text-center text-Text text-xs font-poppins font-light underline'
+              'text-text text-center text-text text-xs font-poppins font-light underline'
             }
           >
             Mentions légales

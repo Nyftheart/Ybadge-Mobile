@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.splash-screen-enter {
+  opacity: 0;
+}
+
+.splash-screen-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.splash-screen-exit {
+  opacity: 1;
+}
+
+.splash-screen-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+.locked-badge {
+  filter: blur(8px);
+  opacity: 0.3;
+}

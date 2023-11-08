@@ -4,11 +4,11 @@ import Link from 'next/link'
 
 export default function PageBadgesProfilBadgdes() {
   return (
-    <div className={'bg-Background min-h-screen justify-center'}>
+    <div className={'bg-background min-h-screen justify-center'}>
       <div className={'flex justify-end mr-14'}>
         <Link href="/PageBadgesCompte">
           <Image
-            src="/IconParametres.png"
+            src="/assets/img/IconParametres.png"
             width={20}
             height={20}
             alt="badge-placeholder"
@@ -16,10 +16,10 @@ export default function PageBadgesProfilBadgdes() {
           />
         </Link>
       </div>
-      <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
+      <div className="bg-menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
         <Link href="/PageBadges">
           <img
-            src="/Recherche_Logo_Ybadges.png"
+            src="/assets/img/Recherche_Logo_Ybadges.png"
             width={40}
             height={40}
             alt="logo"
@@ -28,7 +28,7 @@ export default function PageBadgesProfilBadgdes() {
         </Link>
         <Link href="#">
           <img
-            src="/DefaultProfile.png"
+            src="/assets/img/DefaultProfile.png"
             width={28}
             height={40}
             alt="logo"
@@ -39,7 +39,7 @@ export default function PageBadgesProfilBadgdes() {
 
       <div className={'flex justify-center mt-20'}>
         <Image
-          src="/DefaultProfile.png"
+          src="/assets/img/DefaultProfile.png"
           width={51}
           height={54}
           alt="badge-placeholder"
@@ -48,24 +48,24 @@ export default function PageBadgesProfilBadgdes() {
       </div>
 
       <div className={'flex items-center justify-between mb-8 mt-10'}>
-        <div className={'text-Text text-orange-500 ml-6 '}>
+        <div className={'text-text text-orange-500 ml-6 '}>
           <div
             className={
-              'text-Text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2'
+              'text-text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2'
             }
           >
             GUETTA
           </div>
           <div
             className={
-              'text-Text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2'
+              'text-text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2'
             }
           >
             David
           </div>
           <div
             className={
-              'text-Text text-orange-500 MediumChill border-b w-44 mr-10 pb-2'
+              'text-text text-orange-500 MediumChill border-b w-44 mr-10 pb-2'
             }
           >
             Informatique M2
@@ -74,7 +74,7 @@ export default function PageBadgesProfilBadgdes() {
 
         <div className={''}>
           <img
-            src="/LOGO_TYPO_BLANC.png"
+            src="/assets/img/LOGO_TYPO_BLANC.png"
             width={100}
             height={100}
             alt="logo"
@@ -84,12 +84,12 @@ export default function PageBadgesProfilBadgdes() {
       </div>
 
       <div className={'flex justify-between items-center'}>
-        <div className={'text-Text text-orange-500 ml-6 MediumChill text-lg'}>
+        <div className={'text-text text-orange-500 ml-6 MediumChill text-lg'}>
           MA COLLECTION
         </div>
-        <div className=" transform transition-all hover:w-36 w-12 flex bg-Search rounded-2xl px-4 py-2 ml-14 mr-6  justify-items-start">
+        <div className=" transform transition-all hover:w-36 w-12 flex bg-search rounded-2xl px-4 py-2 ml-14 mr-6  justify-items-start">
           <img
-            src="/Search.png"
+            src="/assets/img/Search.png"
             width={14}
             height={15}
             alt="logo"
@@ -101,73 +101,35 @@ export default function PageBadgesProfilBadgdes() {
 
       <div className={'flex justify-around mt-5 mx-3'}>
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-      </div>
-
-      <div className={'flex justify-around mt-3 mx-3'}>
-        <Image
-          src="/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
@@ -177,35 +139,35 @@ export default function PageBadgesProfilBadgdes() {
 
       <div className={'flex justify-around mt-3 mx-3'}>
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
@@ -215,35 +177,73 @@ export default function PageBadgesProfilBadgdes() {
 
       <div className={'flex justify-around mt-3 mx-3'}>
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
+          width={58}
+          height={58}
+          alt="badge-placeholder"
+          className=""
+        />
+      </div>
+
+      <div className={'flex justify-around mt-3 mx-3'}>
+        <Image
+          src="/assets/img/CirclePlaceholderProfile.png"
+          width={58}
+          height={58}
+          alt="badge-placeholder"
+          className=""
+        />
+        <Image
+          src="/assets/img/CirclePlaceholderProfile.png"
+          width={58}
+          height={58}
+          alt="badge-placeholder"
+          className=""
+        />
+        <Image
+          src="/assets/img/CirclePlaceholderProfile.png"
+          width={58}
+          height={58}
+          alt="badge-placeholder"
+          className=""
+        />
+        <Image
+          src="/assets/img/CirclePlaceholderProfile.png"
+          width={58}
+          height={58}
+          alt="badge-placeholder"
+          className=""
+        />
+        <Image
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
@@ -253,35 +253,35 @@ export default function PageBadgesProfilBadgdes() {
 
       <div className={'flex justify-around mt-3 mx-3 mb-4'}>
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
           className=""
         />
         <Image
-          src="/CirclePlaceholderProfile.png"
+          src="/assets/img/CirclePlaceholderProfile.png"
           width={58}
           height={58}
           alt="badge-placeholder"
