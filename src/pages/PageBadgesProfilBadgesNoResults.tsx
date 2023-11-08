@@ -1,6 +1,6 @@
-import React from 'react'
+
 import Image from 'next/image'
-import Badge from '../components/Badge'
+import Badge from '../components/badge'
 
 export default function PageBadgesProfilBadgesNoResults() {
   return (

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Badge from '../components/Badge'
+import Badge from '../components/badge'
 import { Vector3 } from 'three'
 
 export default function PageBadgesDefinition() {

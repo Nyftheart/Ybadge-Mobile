@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 
 export default function Login() {
@@ -11,7 +10,7 @@ export default function Login() {
         alt="logo"
         className="m-auto py-20"
       />
-      <div >
+      <div>
         <div className="justify-around flex mx-8">
           <Link href="/Register">
             <p className="font-poppins text-md text-unselect">INSCRIVEZ-VOUS</p>

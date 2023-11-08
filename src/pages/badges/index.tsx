@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import jsonBadges from './../../public/temp-data/badges.json'
+import jsonBadges from '../../../public/temp-data/badges.json'
 
 const Badge = ({ badge, height, width }: any) => {
   let href = `/PageBadgesDefinition?badgeName=${badge.name}`
