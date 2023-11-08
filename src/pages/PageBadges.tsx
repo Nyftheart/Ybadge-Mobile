@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import jsonBadges from '../data/badges.json'
+import jsonBadges from './../../public/temp-data/badges.json'
 
 const Badge = ({ badge, height, width }: any) => {
   let href = `/PageBadgesDefinition?badgeName=${badge.name}`
@@ -44,7 +44,7 @@ export default function PageBadges() {
   return (
     <div className=" bg-Background min-h-screen ">
       <img
-        src="/LOGO_TYPO_BLANC.png"
+        src="/assets/img/LOGO_TYPO_BLANC.png"
         width={125}
         height={80}
         alt="logo"
@@ -57,7 +57,7 @@ export default function PageBadges() {
           </h1>
           <Link href="PageBadgesRecherche">
             <img
-              src="/Search.png"
+              src="/assets/img/Search.png"
               width={22}
               height={23}
               alt="logo"
@@ -70,7 +70,7 @@ export default function PageBadges() {
       <div className="bg-Menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
         <Link href="#">
           <img
-            src="/Recherche_Logo_Ybadges.png"
+            src="/assets/img/Recherche_Logo_Ybadges.png"
             width={40}
             height={40}
             alt="logo"
@@ -79,7 +79,7 @@ export default function PageBadges() {
         </Link>
         <Link href="/PageBadgesProfilBadges">
           <img
-            src="/DefaultProfile.png"
+            src="/assets/img/DefaultProfile.png"
             width={28}
             height={40}
             alt="logo"

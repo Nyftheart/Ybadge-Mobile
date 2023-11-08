@@ -12,7 +12,7 @@ export default function Register() {
   return (
     <div className="pt-5 bg-Background min-h-screen">
       <img
-        src="/LOGO_TYPO_BLANC.png"
+        src="/assets/img/LOGO_TYPO_BLANC.png"
         width={125}
         height={166}
         alt="logo"

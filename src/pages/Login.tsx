@@ -6,13 +6,13 @@ export default function Login() {
   return (
     <div className="pt-5 bg-Background min-h-screen">
       <img
-        src="/LOGO_TYPO_BLANC.png"
+        src="/assets/img/LOGO_TYPO_BLANC.png"
         width={125}
         height={166}
         alt="logo"
         className="m-auto py-20"
       />
-      <div className=" sm:flex sm:flex-row">
+      <div >
         <div className="justify-around flex mx-8">
           <Link href="/Register">
             <p className="font-poppins text-md text-unselect">INSCRIVEZ-VOUS</p>

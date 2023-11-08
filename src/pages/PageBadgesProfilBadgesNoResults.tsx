@@ -7,7 +7,7 @@ export default function PageBadgesProfilBadgesNoResults() {
     <div className={'bg-Background min-h-screen'}>
       <div className={'flex justify-end mr-4'}>
         <Image
-          src="/IconParametres.png"
+          src="/assets/img/IconParametres.png"
           width={35}
           height={166}
           alt="badge-placeholder"
@@ -17,7 +17,7 @@ export default function PageBadgesProfilBadgesNoResults() {
 
       <div className={'flex justify-center mt-4'}>
         <Image
-          src="/DefaultProfile.png"
+          src="/assets/img/DefaultProfile.png"
           width={150}
           height={166}
           alt="badge-placeholder"
@@ -34,7 +34,7 @@ export default function PageBadgesProfilBadgesNoResults() {
 
         <div className={''}>
           <img
-            src="/Recherche_Logo_Ybadges.png"
+            src="/assets/img/Recherche_Logo_Ybadges.png"
             width={100}
             height={100}
             alt="logo"

@@ -8,7 +8,7 @@ export default function PageBadgesCompte() {
       <div className={'text-center pt-16'}>
         <Link href="/PageBadgesProfilBadges">
           <img
-            src="/arrow.png"
+            src="/assets/img/arrow.png"
             width={21}
             height={14}
             alt="logo"
@@ -16,7 +16,7 @@ export default function PageBadgesCompte() {
           />
         </Link>
         <img
-          src="/LOGO_TYPO_BLANC.png"
+          src="/assets/img/LOGO_TYPO_BLANC.png"
           width={125}
           height={100}
           alt="logo"
@@ -29,7 +29,7 @@ export default function PageBadgesCompte() {
         }
       >
         <img
-          src="/DefaultProfile.png"
+          src="/assets/img/DefaultProfile.png"
           width={51}
           height={54}
           alt="logo"

@@ -6,7 +6,7 @@ export default function PageBadgesHowToGet() {
     <div className={'bg-Background min-h-screen'}>
       <div className={'text-center'}>
         <img
-          src="/Recherche_Logo_Ybadges.png"
+          src="/assets/img/Recherche_Logo_Ybadges.png"
           width={275}
           height={100}
           alt="logo"

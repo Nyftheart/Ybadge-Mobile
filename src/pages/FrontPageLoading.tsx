@@ -6,7 +6,7 @@ export default function FrontPageLoading() {
   return (
     <div className="bg-[#131313]">
       <Image
-        src="/imgLogo.png"
+        src="/assets/img/imgLogo.png"
         width={223}
         height={166}
         alt="logo"

@@ -23,27 +23,12 @@ export default function PageBadgesDefinition() {
   }, [])
 
   return (
-    <div className={'bg-Background min-h-screen pt-20'}>
-      <Link className="relative z-0 select-all" href="/PageBadges">
-        <img
-          src="/arrow.png"
-          width={21}
-          height={14}
-          alt="logo"
-          className="ml-6 z-50"
-        />
+    <div
+      className={'bg-Background min-h-screen pointer-events-none touch-none'}
+    >
+      <Link href="/PageBadges">
+        <img src="/assets/img/arrow.png" width={21} height={14} alt="logo" />
       </Link>
-
-      <div className="h-96 mb-10">
-        <div className="fixed z-40 h-screen w-screen touch-none">
-          <Badge
-            initialPosition={new Vector3(0, 1, -10)}
-            objectFolderPath={objectFolderPath}
-            isLocked={isLocked}
-            badgeName={badgeName}
-          />
-        </div>
-      </div>
 
       <div
         className={
@@ -60,6 +45,15 @@ export default function PageBadgesDefinition() {
       >
         Ce badge correspond à ta filière.
       </p>
+
+      <div className="h-full w-full absolute z-0 top-0">
+        <Badge
+          initialPosition={new Vector3(0, -5, -10)}
+          objectFolderPath={objectFolderPath}
+          isLocked={isLocked}
+          badgeName={badgeName}
+        />
+      </div>
     </div>
   )
 }
