@@ -5,9 +5,9 @@ import Layout from '../layouts/Layout'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className="w-full h-full fixed bg-background">
-      <div className="max-w-md h-full relative mx-auto">
-        <SplashScreen duration={2500} />
+    <div className="w-full h-full overflow-auto fixed bg-background">
+      <div className="max-w-md relative mx-auto">
+        <SplashScreen duration={1000} />
 
         <Layout>
           <Component {...pageProps} />

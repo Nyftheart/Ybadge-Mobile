@@ -22,7 +22,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ duration }) => {
       unmountOnExit
     >
       <div
-        onClick={() => setShowSplash(false)}
+        onClick={() => {setShowSplash(false); duration = 0}}
         className="fixed flex justify-center items-center flex-col z-50 top-0 left-0 w-full h-full bg-background"
       >
         <img

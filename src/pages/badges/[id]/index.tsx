@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Badge from '../components/badge'
+import Badge from '../../../components/badge'
 import { Vector3 } from 'three'
 
 export default function PageBadgesDefinition() {
   const [isLocked, setIsLocked] = useState(false)
-  const [objectFolderPath, setObjectFolderPath] = useState(
-    '/assets/three/badges/'
-  )
   const [badgeName, setBadgeName] = useState('logo')
 
   useEffect(() => {
@@ -49,7 +46,6 @@ export default function PageBadgesDefinition() {
       <div className="h-full w-full absolute z-0 top-0">
         <Badge
           initialPosition={new Vector3(0, -5, -10)}
-          objectFolderPath={objectFolderPath}
           isLocked={isLocked}
           badgeName={badgeName}
         />

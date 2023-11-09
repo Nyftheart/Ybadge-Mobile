@@ -1,4 +1,3 @@
-
 import Link from 'next/link'
 
 export default function PageBadgesCompte() {
@@ -11,9 +10,10 @@ export default function PageBadgesCompte() {
             width={21}
             height={14}
             alt="logo"
-            className=" ml-6"
+            className="ml-6"
           />
         </Link>
+
         <img
           src="/assets/img/LOGO_TYPO_BLANC.png"
           width={125}
@@ -22,6 +22,7 @@ export default function PageBadgesCompte() {
           className="m-auto  pb-8"
         />
       </div>
+
       <div
         className={
           'text-text text-red-600 text-3xl flex items-center justify-center mt-10'
@@ -62,15 +63,12 @@ export default function PageBadgesCompte() {
               'p-4 text-center text-text text-md pt-4 text-orange-500 underline decoration-1 underline-offset-2 font-poppins font-medium'
             }
           >
-            {' '}
             SUPPRIMER SON COMPTE
           </div>
         </Link>
         <div className={'rounded-lg  bg-gray-200'}>
           <div
-            className={
-              'text-text text-center text-text text-xs font-poppins font-light underline'
-            }
+            className={'text-center text-xs font-poppins font-light underline'}
           >
             Mentions légales
           </div>

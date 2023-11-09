@@ -8,7 +8,6 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 
 export default function Badge({
   initialPosition,
-  objectFolderPath,
   isLocked = false,
   badgeScale,
   displayText = true,
@@ -33,7 +32,6 @@ export default function Badge({
       <BadgeModel
         isMouseDown={isMouseDown}
         initialPosition={initialPosition}
-        objectFolderPath={objectFolderPath}
         badgeScale={badgeScale}
         displayText={displayText}
         badgeName={badgeName}
@@ -45,7 +43,6 @@ export default function Badge({
 function BadgeModel({
   isMouseDown,
   initialPosition,
-  objectFolderPath,
   badgeScale = 1,
   displayText,
   badgeName,
@@ -57,11 +54,11 @@ function BadgeModel({
 
   const materials = useLoader(
     MTLLoader,
-    `${objectFolderPath}/${badgeName}/material.mtl`
+    `/assets/three/badges/${badgeName}/material.mtl`
   )
   const object = useLoader(
     OBJLoader,
-    `${objectFolderPath}/${badgeName}/object.obj`,
+    `/assets/three/badges/${badgeName}/object.obj`,
     (loader: any) => {
       materials.preload()
       loader.setMaterials(materials)
