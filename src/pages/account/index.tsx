@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function PageBadgesProfilBadgdes() {
+export default function Account() {
   return (
     <div className={'bg-background min-h-screen justify-center'}>
       <div className={'flex justify-end mr-14'}>

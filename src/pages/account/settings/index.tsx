@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function PageBadgesCompte() {
+export default function Settings() {
   return (
     <div className={'bg-background min-h-screen'}>
       <div className={'text-center pt-16'}>

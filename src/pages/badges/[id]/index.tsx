@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Badge from '../../../components/badge'
 import { Vector3 } from 'three'
 
-export default function PageBadgesDefinition() {
+export default function BadgeDetails() {
   const [isLocked, setIsLocked] = useState(false)
   const [badgeName, setBadgeName] = useState('logo')
 

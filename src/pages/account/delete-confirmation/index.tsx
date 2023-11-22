@@ -1,7 +1,7 @@
 
 import Link from 'next/link'
 
-export default function PageBadgesCompteSupprime() {
+export default function DeleteConfirmation() {
   return (
     <div className={'bg-background min-h-screen'}>
       <div className={'text-center'}>

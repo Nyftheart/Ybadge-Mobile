@@ -20,7 +20,7 @@ const BadgeCard = ({ badge, height, width }: any) => {
   )
 }
 
-export default function PageBadges() {
+export default function BadgesList() {
   const [badges, setBadges] = useState<any>([])
 
   useEffect(() => {
