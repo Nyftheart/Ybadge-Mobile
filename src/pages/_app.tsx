@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className="w-full h-full overflow-auto fixed bg-background">
       <div className="max-w-md relative mx-auto">
-        <SplashScreen duration={1000} />
+        <SplashScreen />
 
         <Layout>
           <Component {...pageProps} />
