@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import jsonBadges from '../../../public/temp-data/badges.json'
 
-const Badge = ({ badge, height, width }: any) => {
+const BadgeCard = ({ badge, height, width }: any) => {
   let href = `/PageBadgesDefinition?badgeName=${badge.name}`
   if (badge.locked === true) {
     href += '&isLocked=true'
@@ -20,7 +20,7 @@ const Badge = ({ badge, height, width }: any) => {
   )
 }
 
-export default function PageBadges() {
+export default function BadgesList() {
   const [badges, setBadges] = useState<any>([])
 
   useEffect(() => {
@@ -53,31 +53,12 @@ export default function PageBadges() {
         </form>
       </div>
 
-      <div className="bg-menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
-        <Link href="#">
-          <img
-            src="/assets/img/Recherche_Logo_Ybadges.png"
-            width={40}
-            height={40}
-            alt="logo"
-            className="m-auto"
-          />
-        </Link>
-        <Link href="/PageBadgesProfilBadges">
-          <img
-            src="/assets/img/DefaultProfile.png"
-            width={28}
-            height={40}
-            alt="logo"
-            className="m-auto opacity-30"
-          />
-        </Link>
-      </div>
+      
       <div>
         <div className={'text-text mx-7 MediumChill'}>Badges Classiques</div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
           {badges.map((badge: any) => (
-            <Badge key={badge.id} width={57} height={57} badge={badge} />
+            <BadgeCard key={badge.id} width={57} height={57} badge={badge} />
           ))}
         </div>
       </div>
@@ -85,7 +66,7 @@ export default function PageBadges() {
         <div className={'text-text mx-7 mt-12 MediumChill'}>Badges Events</div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
           {badges.map((badge: any) => (
-            <Badge key={badge.id} width={57} height={57} badge={badge} />
+            <BadgeCard key={badge.id} width={57} height={57} badge={badge} />
           ))}
         </div>
       </div>
@@ -95,7 +76,7 @@ export default function PageBadges() {
         </div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
           {badges.map((badge: any) => (
-            <Badge key={badge.id} width={57} height={57} badge={badge} />
+            <BadgeCard key={badge.id} width={57} height={57} badge={badge} />
           ))}
         </div>
       </div>
@@ -105,7 +86,7 @@ export default function PageBadges() {
         </div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
           {badges.map((badge: any) => (
-            <Badge key={badge.id} width={57} height={57} badge={badge} />
+            <BadgeCard key={badge.id} width={57} height={57} badge={badge} />
           ))}
         </div>
       </div>
