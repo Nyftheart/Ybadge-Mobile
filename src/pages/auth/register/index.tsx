@@ -1,15 +1,17 @@
 import Layout from '../layout'
 import * as React from 'react'
-import Link from '@mui/material/Link'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
-import Input from '@mui/material/Input'
-import InputLabel from '@mui/material/InputLabel'
+import Link from '@mui/material/Link'
 import InputAdornment from '@mui/material/InputAdornment'
-import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Checkbox from '@mui/material/Checkbox'
 import VisibilityOutlined from '@mui/icons-material/VisibilityOutlined'
 import VisibilityOffOutlined from '@mui/icons-material/VisibilityOffOutlined'
+import * as Yup from 'yup'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
 
 export default function Register() {
   const [showPassword, setShowPassword] = React.useState(false)
@@ -21,77 +23,125 @@ export default function Register() {
   ) => {
     event.preventDefault()
   }
+
+  // form validation rules
+  const validationSchema = Yup.object().shape({
+    firstname: Yup.string().required('Le nom est requis'),
+    lastname: Yup.string().required('Le prénom est requis'),
+    email: Yup.string()
+      .required("L'Email est requis")
+      .email('Email invalide')
+      .matches(/^[A-Za-z0-9._%+-]+@ynov.com$/, 'Entrer un email ynov'),
+    password: Yup.string()
+      .required('Le mot de passe est requis')
+      .min(6, 'Minimum 6 caractères')
+      .max(40, 'Password must not exceed 40 characters'),
+  })
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+  })
+
+  const onSubmit = (data) => {
+    console.log(JSON.stringify(data, null, 2))
+  }
+
   return (
     <Layout>
-      <div>
-        <TextField
-          fullWidth
-          id="Fistname"
-          label="Nom"
-          variant="standard"
-          className="text-sm"
-        />
-        <TextField
-          fullWidth
-          id="lastname"
-          label="Prénom"
-          variant="standard"
-          className="text-sm mt-3"
-        />
-        <TextField
-          fullWidth
-          id="email"
-          label="Adresse mail (Ynov)"
-          variant="standard"
-          className="text-sm mt-3"
-        />
-
-        <FormControl
-          fullWidth
-          variant="standard"
-          margin="normal"
-          className="mt-3 text-sm"
-        >
-          <InputLabel htmlFor="standard-adornment-password">
-            Password
-          </InputLabel>
-          <Input
-            id="standard-adornment-password"
-            type={showPassword ? 'text' : 'password'}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                >
-                  {showPassword ? (
-                    <VisibilityOffOutlined />
-                  ) : (
-                    <VisibilityOutlined />
-                  )}
-                </IconButton>
-              </InputAdornment>
-            }
+      <form className="w-full">
+        <div className="form-group">
+          <TextField
+            fullWidth
+            id="firstname"
+            label="Nom"
+            variant="standard"
+            margin="dense"
+            className="text-sm"
+            helperText={errors.firstname?.message}
+            error={errors.firstname ? true : false}
+            {...register('firstname')}
           />
-        </FormControl>
+        </div>
+        <div className="form-group">
+          <TextField
+            fullWidth
+            id="lastname"
+            label="Prénom"
+            variant="standard"
+            margin="dense"
+            className="text-sm"
+            helperText={errors.lastname?.message}
+            error={errors.lastname ? true : false}
+            {...register('lastname')}
+          />
+        </div>
+        <div className="form-group">
+          <TextField
+            fullWidth
+            id="email"
+            label="Adresse mail (Ynov)"
+            variant="standard"
+            margin="dense"
+            className="text-sm"
+            helperText={errors.email?.message}
+            error={errors.email ? true : false}
+            {...register('email')}
+          />
+        </div>
+        <div className="form-group">
+          <TextField
+            fullWidth
+            autoComplete="on"
+            id="standard-adornment-password"
+            className="mt-3 text-sm"
+            label="Password"
+            type={showPassword ? 'text' : 'password'}
+            variant="standard"
+            margin="dense"
+            helperText={errors.password?.message}
+            error={errors.password ? true : false}
+            {...register('password')}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                  >
+                    {showPassword ? (
+                      <VisibilityOffOutlined />
+                    ) : (
+                      <VisibilityOutlined />
+                    )}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
+        </div>
         <div className="mt-10 flex flex-col mx-auto items-center w-min">
           <Button
+            type="submit"
             className="rounded-full px-14 font-bold"
             variant="outlined"
-            href="#outlined-buttons"
+            onClick={handleSubmit(onSubmit)}
           >
             Inscription
           </Button>
           <Link
-            href="/auth/register"
+            href="/auth/login"
             underline="always"
             className="text-xs font-light my-2"
           >
-            Pas encore inscrit?
+            Déjà inscrit?
           </Link>
         </div>
-      </div>
+      </form>
     </Layout>
   )
 }
