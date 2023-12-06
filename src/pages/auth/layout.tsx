@@ -74,7 +74,7 @@ export default function AuthLayout({
               </Tabs>
             </div>
           </div>
-          <div className="flex justify-center px-2">{children}</div>
+          <div className="flex justify-center w-full px-4">{children}</div>
         </div>
       </div>
     </section>

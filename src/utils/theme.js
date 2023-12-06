@@ -13,6 +13,9 @@ export const theme = createTheme({
     mode: 'dark',
     primary: {
       main:'#fff'
+    },
+    error: {
+      main:'#ba000d'
     }
  },
  typography: {
