@@ -34,7 +34,7 @@ export const SplashScreen: React.FC = () => {
           autoPlay
         >
           <source
-            src="/assets/videos/test-splash-video_12MO.mp4"
+            src="/assets/videos/SPLASH_SCREEN_CUT.mp4"
             type="video/mp4"
           />
         </video>
