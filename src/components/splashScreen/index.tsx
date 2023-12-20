@@ -20,7 +20,7 @@ export const SplashScreen: React.FC = () => {
         className="fixed flex justify-center items-center flex-col z-50 top-0 left-0 w-full h-full bg-background"
       >
         <video
-          poster="/assets/img/logo.png"
+          poster="/assets/img/splashscreen-poster.jpg"
           className="max-w-md h-screen object-fill"
           width={'100%'}
           onPlay={() => {
