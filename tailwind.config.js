@@ -16,7 +16,18 @@ module.exports = {
         transparent: 'rgba(255,255,255,0)',
         search: 'rgba(65, 65, 65, 1)',
       },
+      fontFamily: {
+        'chillax': ['Chillax', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+      }
     },
+    typography: {
+      fontFamily: [
+        'Poppins',
+        'Roboto',
+        '"Helvetica Neue"',
+      ].join(','),
+  },
   },
   plugins: [plugin],
 }
