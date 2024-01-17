@@ -1,77 +1,70 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import jsonUser from '../../../../public/temp-data/user.json'
+import { User } from '../../../models/user.model'
+import { useEffect, useState } from 'react'
+import Button from '../../../components/button'
 
 export default function Settings() {
+  const [user, setUser] = useState<User>({})
+
+  useEffect(() => {
+    setUser(jsonUser.data)
+  }, [])
+
   return (
-    <div className={'bg-background min-h-screen'}>
-      <div className={'text-center pt-16'}>
-        <Link href="/PageBadgesProfilBadges">
-          <img
-            src="/assets/img/arrow.png"
-            width={21}
-            height={14}
+    <div>
+      <div className={'text-center pt-16 mb-16'}>
+        <Link href="/account">
+          <Image
+            src="/assets/illustrations/arrow.svg"
+            width={12}
+            height={28}
             alt="logo"
-            className="ml-6"
+            className="ml-2"
           />
         </Link>
 
-        <img
+        <Image
           src="/assets/img/LOGO_TYPO_BLANC.png"
-          width={125}
-          height={100}
+          width={70}
+          height={80}
           alt="logo"
-          className="m-auto  pb-8"
+          className="m-auto mt-1"
         />
       </div>
 
-      <div
-        className={
-          'text-text text-red-600 text-3xl flex items-center justify-center mt-10'
-        }
-      >
-        <img
-          src="/assets/img/DefaultProfile.png"
-          width={51}
-          height={54}
-          alt="logo"
-          className="mr-6"
-        />
-        <h1 className="SemiboldChill">COMPTE</h1>
-      </div>
+      <div className="w-56 mx-auto">
+        <div className={' text-3xl flex items-center justify-center mt-10'}>
+          <Image
+            src="/assets/illustrations/user.svg"
+            width={51}
+            height={54}
+            alt="logo"
+            className="mr-8"
+          />
+          <h1 className="font-chillax font-semibold text-3xl">COMPTE</h1>
+        </div>
 
-      <div className={'text-text text-blue-500 ml-32 mt-8 '}>
-        <div className="MediumChill">GUETTA</div>
-        <div className="MediumChill">David</div>
-        <div className="MediumChill">Informatique M2 </div>
-      </div>
+        <div className="grid text-base grid-rows-3 gap-5 w-max mx-auto mt-8">
+          <div className="font-chillax font-medium">{user.lastName || '-'}</div>
 
-      <div className={'rounded-lg pb-2 bg-gray-200 mx-20 '}>
-        <Link href="/PageBadgesCompteDeco">
-          <h1
-            className={
-              'font-bold border rounded-full text-center text-text text-md py-2 mt-7 font-poppins text-md'
-            }
-          >
-            {' '}
-            SE DECONNECTER
-          </h1>
-        </Link>
-      </div>
-      <div className={'bg-gray-200 mt-36'}>
-        <Link href="/PageBadgesCompteSupprime">
-          <div
-            className={
-              'p-4 text-center text-text text-md pt-4 text-orange-500 underline decoration-1 underline-offset-2 font-poppins font-medium'
-            }
-          >
-            SUPPRIMER SON COMPTE
+          <div className="font-chillax font-medium">
+            {user.firstName || '-'}
           </div>
-        </Link>
-        <div className={'rounded-lg  bg-gray-200'}>
-          <div
-            className={'text-center text-xs font-poppins font-light underline'}
-          >
+
+          <div className="font-chillax font-medium">
+            {user.filiere?.name || '-'}
+          </div>
+        </div>
+
+        <Button additionalClasses={'mt-8'}>SE DÉCONNECTER</Button>
+
+        <div className="mt-28 flex justify-center gap-6 flex-col">
+          <Button style="link" additionalClasses="font-medium text-center" href="/account/delete-confirmation">SUPPRIMER MON COMPTE</Button>
+          <Button style="link" additionalClasses="text-xs opacity-60 font-light" className="text-xs">
             Mentions légales
-          </div>
+          </Button>
         </div>
       </div>
     </div>

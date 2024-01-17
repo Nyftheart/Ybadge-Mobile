@@ -21,10 +21,10 @@ export default function BadgeDetails() {
 
   return (
     <div
-      className={'bg-background min-h-screen pointer-events-none touch-none'}
+      className={'min-h-screen pointer-events-none touch-none'}
     >
       <Link href="/PageBadges">
-        <img src="/assets/img/arrow.png" width={21} height={14} alt="logo" />
+        <img src="/assets/illustrations/arrow.svg" width={21} height={14} alt="logo" />
       </Link>
 
       <div

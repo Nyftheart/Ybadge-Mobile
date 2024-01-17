@@ -1,10 +1,11 @@
-import { useFrame, useLoader, Canvas } from '@react-three/fiber'
-import { Center, Text3D } from '@react-three/drei'
+import { useFrame, Canvas, useLoader } from '@react-three/fiber'
+import { Center, Text3D, useGLTF } from '@react-three/drei'
 import { useState } from 'react'
-import { Euler, MeshPhongMaterial } from 'three'
+import { Euler, MeshPhongMaterial, Vector3 } from 'three'
 import { Motion, spring, PlainStyle } from 'react-motion'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 export default function Badge({
   initialPosition,
@@ -22,12 +23,17 @@ export default function Badge({
       onPointerUp={() => setIsMouseDown(false)}
       onTouchStart={() => setIsMouseDown(true)}
       onPointerDown={() => setIsMouseDown(true)}
-      camera={{ position: [0, 0, 6.5] }}
+      camera={{ position: [0, 2, 6.5] }}
     >
       <directionalLight
-        color={[255, 255, 255]}
-        intensity={0.01}
-        position={[0, 0, 25]}
+        color={[255, 50, 50]}
+        intensity={0.005}
+        position={[0, -50, 30]}
+      />
+      <directionalLight
+        color={[150, 150, 150]}
+        intensity={0.0005}
+        position={[0, 50, 30]}
       />
       <BadgeModel
         isMouseDown={isMouseDown}
@@ -40,31 +46,38 @@ export default function Badge({
   )
 }
 
-function BadgeModel({
-  isMouseDown,
-  initialPosition,
-  badgeScale = 1,
-  displayText,
-  badgeName,
-}: any) {
+function BadgeModel({ isMouseDown, initialPosition, displayText }: any) {
   const [position, setPosition] = useState(initialPosition)
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 })
   const [pointer, setPointer] = useState({ x: 0, y: 0 })
   const [badgeIsTurned, setBadgeIsTurned] = useState(false)
 
-  const materials = useLoader(
-    MTLLoader,
-    `/assets/three/badges/${badgeName}/material.mtl`
-  )
-  const object = useLoader(
-    OBJLoader,
-    `/assets/three/badges/${badgeName}/object.obj`,
-    (loader: any) => {
-      materials.preload()
-      loader.setMaterials(materials)
-    }
-  )
-  object.scale.set(2 * badgeScale, 2 * badgeScale, 2 * badgeScale)
+  // const materials = useLoader(
+  //   MTLLoader,
+  //   `/assets/three/badges/halloween/test2.mtl`
+  // )
+  // const object = useLoader(
+  //   OBJLoader,
+  //   `/assets/three/badges/halloween/test2.obj`,
+  //   (loader: any) => {
+  //     materials.preload()
+  //     loader.setMaterials(materials)
+  //   }
+  // )
+
+  /** GLTF */
+  // const object = useLoader(
+  //   GLTFLoader,
+  //   `/assets/three/badges/halloween/badge.gltf`,
+  //   (loader: any) => {
+  //     console.log(loader)
+  //   }
+  // )
+
+  /** GLB */
+  const object = useGLTF(`/assets/three/badges/halloween/test.glb`)
+
+  object.scene.scale.set(0.8, 0.8, 0.8)
 
   useFrame(({ pointer: { x, y } }) => {
     setPointer({ x: x, y: y })
@@ -136,7 +149,7 @@ function BadgeModel({
               </mesh>
             </group>
           )}
-          <primitive object={object} />
+          <primitive object={object.scene} />
         </group>
       )}
     </Motion>

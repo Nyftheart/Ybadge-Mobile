@@ -1,6 +1,30 @@
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
+const navItemsPosition = {
+  home: 6,
+  logo: 112,
+  user: 218,
+}
 
 export default function Navbar() {
+  const [position, setPosition] = useState('home')
+  const [space, setSpace] = useState(navItemsPosition.home)
+
+  useEffect(() => {
+    switch (position) {
+      case 'home':
+        setSpace(navItemsPosition.home)
+        break
+      case 'logo':
+        setSpace(navItemsPosition.logo)
+        break
+      case 'user':
+        setSpace(navItemsPosition.user)
+        break
+    }
+  }, [position])
+
   return (
     <div className="fixed z-40 bottom-7 w-full px-6">
       <div className="h-14 w-full bg-text rounded-2xl">

@@ -1,0 +1,11 @@
+{
+  "data": {
+    "id": "1",
+    "firstName": "David",
+    "lastName": "GUETTA",
+    "filiere": { "id": "info", "name": "Informatique M2" },
+    "promo": "2021",
+    "campus": "Paris",
+    "email": "david.guetta@gmail.com"
+  }
+}
