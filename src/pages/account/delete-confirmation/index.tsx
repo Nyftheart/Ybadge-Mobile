@@ -1,41 +1,23 @@
-
-import Link from 'next/link'
+import Image from 'next/image'
+import Button from '../../../components/button'
 
 export default function DeleteConfirmation() {
   return (
-    <div className={'bg-background min-h-screen'}>
-      <div className={'text-center'}>
-        <img
-          src="/assets/img/LOGO_TYPO_BLANC.png"
-          width={125}
-          height={100}
-          alt="logo"
-          className="m-auto pt-20 pb-8"
-        />
-      </div>
-      <div className={'rounded-lg pb-8 bg-gray-200 mx-20 mt-10 '}>
-        <Link href="/Login">
-          <div
-            className={
-              'border rounded-full text-center text-text text-md py-2 text-orange-500 mb-20 font-poppins font-bold'
-            }
-          >
-            {' '}
-            SUPPRIMER COMPTE
-          </div>
-        </Link>
-      </div>
+    <div id="delete_account">
+      <Image
+        src="/assets/img/LOGO_TYPO_BLANC.png"
+        width={240}
+        height={266}
+        alt="logo"
+        className="m-auto pt-20 pb-8"
+      />
 
-      <div className={'rounded-lg  bg-gray-200 mt-56'}>
-        <Link href="/PageBadgesCompte">
-          <div
-            className={
-              'p-4 text-center text-text text-md pt-4 text-orange-500 mb-20 underline decoration-1 underline-offset-2 font-poppins font-medium'
-            }
-          >
-            ANNULER
-          </div>
-        </Link>
+      <div className="flex flex-col items-center gap-10 mt-20">
+        <Button style="outline">SUPPRIMER MON COMPTE</Button>
+
+        <Button style="link" href="/account/settings">
+          ANNULER
+        </Button>
       </div>
     </div>
   )

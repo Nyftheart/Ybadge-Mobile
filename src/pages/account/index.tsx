@@ -1,292 +1,81 @@
-
 import Image from 'next/image'
 import Link from 'next/link'
+import jsonBadges from '../../../public/temp-data/badges.json'
+import jsonUser from '../../../public/temp-data/user.json'
+import { useEffect, useState } from 'react'
+import { Badge } from '../../models/badge.model'
+import { User } from '../../models/user.model'
+import BadgesList from '../../components/badges-list'
 
 export default function Account() {
+  const [user, setUser] = useState<User>({})
+  const [badges, setBadges] = useState<Array<Badge>>([])
+  const [filteredBadges, setFilteredBadges] = useState<Array<Badge>>([])
+  const [searchTerm, setSearchTerm] = useState('')
+
+  useEffect(() => {
+    setBadges(jsonBadges.data)
+    setUser(jsonUser.data)
+  }, [])
+
+  useEffect(() => {
+    const searchedBadges = badges.filter((badge) =>
+      badge.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+
+    setFilteredBadges(searchedBadges)
+  }, [searchTerm, badges])
+
   return (
-    <div className={'bg-background min-h-screen justify-center'}>
-      <div className={'flex justify-end mr-14'}>
-        <Link href="/PageBadgesCompte">
+    <div className="py-20">
+      <div className="relative">
+        <Link className="absolute right-0" href={'account/settings'}>
           <Image
-            src="/assets/img/IconParametres.png"
-            width={20}
-            height={20}
-            alt="badge-placeholder"
-            className="pt-14 absolute"
+            src="/assets/illustrations/settings.svg"
+            width={24}
+            height={24}
+            alt="Settings icon"
           />
         </Link>
-      </div>
-      <div className="bg-menu fixed h-20 -bottom-1 z-0 w-full  flex justify-around items-center">
-        <Link href="/PageBadges">
-          <img
-            src="/assets/img/Recherche_Logo_Ybadges.png"
-            width={40}
-            height={40}
-            alt="logo"
-            className="m-auto opacity-30"
+
+        <div className="flex justify-center">
+          <Image
+            className="mt-5"
+            src="/assets/illustrations/user.svg"
+            width={51}
+            height={54}
+            alt="User icon"
           />
-        </Link>
-        <Link href="#">
-          <img
-            src="/assets/img/DefaultProfile.png"
-            width={28}
-            height={40}
-            alt="logo"
-            className="m-auto"
-          />
-        </Link>
+        </div>
       </div>
 
-      <div className={'flex justify-center mt-20'}>
-        <Image
-          src="/assets/img/DefaultProfile.png"
-          width={51}
-          height={54}
-          alt="badge-placeholder"
-          className=""
-        />
-      </div>
+      <div className="mt-16 grid grid-cols-2">
+        <div className="grid text-base grid-rows-3">
+          <div className="font-chillax font-medium pt-3 pb-2 border-b-2">
+            {user.lastName || '-'}
+          </div>
 
-      <div className={'flex items-center justify-between mb-8 mt-10'}>
-        <div className={'text-text text-orange-500 ml-6 '}>
-          <div
-            className={
-              'text-text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2'
-            }
-          >
-            GUETTA
+          <div className="font-chillax font-medium pt-3 pb-2 border-b-2">
+            {user.firstName || '-'}
           </div>
-          <div
-            className={
-              'text-text text-orange-500 MediumChill border-b w-44 mr-10 mb-3 pb-2'
-            }
-          >
-            David
-          </div>
-          <div
-            className={
-              'text-text text-orange-500 MediumChill border-b w-44 mr-10 pb-2'
-            }
-          >
-            Informatique M2
+
+          <div className="font-chillax font-medium pt-3 pb-2 border-b-2">
+            {user.filiere?.name || '-'}
           </div>
         </div>
 
-        <div className={''}>
-          <img
-            src="/assets/img/LOGO_TYPO_BLANC.png"
-            width={100}
-            height={100}
-            alt="logo"
-            className="m-auto mr-8 pt-6"
+        <div className="flex items-center justify-end">
+          <Image
+            src={`/assets/img/filieres/${user.filiere?.id || 'info'}.png`}
+            width={99}
+            height={95}
+            alt="Badge filière"
           />
         </div>
       </div>
 
-      <div className={'flex justify-between items-center'}>
-        <div className={'text-text text-orange-500 ml-6 MediumChill text-lg'}>
-          MA COLLECTION
-        </div>
-        <div className=" transform transition-all hover:w-36 w-12 flex bg-search rounded-2xl px-4 py-2 ml-14 mr-6  justify-items-start">
-          <img
-            src="/assets/img/Search.png"
-            width={14}
-            height={15}
-            alt="logo"
-            className="my-auto"
-          />
-          <p className="text-unselect ml-3 font-light font-poppins mr-9 font-poppins text-xs"></p>
-        </div>
-      </div>
-
-      <div className={'flex justify-around mt-5 mx-3'}>
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-      </div>
-
-      <div className={'flex justify-around mt-3 mx-3'}>
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-      </div>
-
-      <div className={'flex justify-around mt-3 mx-3'}>
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-      </div>
-
-      <div className={'flex justify-around mt-3 mx-3'}>
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-      </div>
-
-      <div className={'flex justify-around mt-3 mx-3 mb-4'}>
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
-        <Image
-          src="/assets/img/CirclePlaceholderProfile.png"
-          width={58}
-          height={58}
-          alt="badge-placeholder"
-          className=""
-        />
+      <div className="mt-8 mb-20">
+        <BadgesList badges={filteredBadges} onSearch={setSearchTerm} />
       </div>
     </div>
   )

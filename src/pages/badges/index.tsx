@@ -20,7 +20,7 @@ const BadgeCard = ({ badge, height, width }: any) => {
   )
 }
 
-export default function BadgesList() {
+export default function Badges() {
   const [badges, setBadges] = useState<any>([])
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function BadgesList() {
   }, [])
 
   return (
-    <div className=" bg-background min-h-screen ">
+    <div className=" min-h-screen ">
       <img
         src="/assets/img/LOGO_TYPO_BLANC.png"
         width={125}
