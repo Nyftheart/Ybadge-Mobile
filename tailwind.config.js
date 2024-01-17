@@ -24,6 +24,7 @@ module.exports = {
     typography: {
       fontFamily: [
         'Poppins',
+        'Chillax',
         'Roboto',
         '"Helvetica Neue"',
       ].join(','),
