@@ -12,6 +12,8 @@ module.exports = {
         unselect: 'rgba(255, 255, 255, 0.35)',
         menu: '#414141',
         background: '#131313',
+        'ybadges-purple': '#7436B3',
+        'ybadges-black': '#0E0E0E',
         text: '#ffffff',
         transparent: 'rgba(255,255,255,0)',
         search: 'rgba(65, 65, 65, 1)',
