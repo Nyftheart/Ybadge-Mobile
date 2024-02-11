@@ -5,6 +5,8 @@
 @layer base {
   :root {
     --text: #ffffff;
+    --ybadges-purple: #7436b3;
+    --ybadges-black: '#0E0E0E';
   }
 }
 
