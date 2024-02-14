@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import jsonBadges from '../../../public/temp-data/badges.json'
+import httpService from '../../services/http-service'
 
 const BadgeCard = ({ badge, height, width }: any) => {
   let href = `/PageBadgesDefinition?badgeName=${badge.name}`
@@ -23,8 +24,21 @@ const BadgeCard = ({ badge, height, width }: any) => {
 export default function Badges() {
   const [badges, setBadges] = useState<any>([])
 
+  const fetchBadges = async () => {
+    await httpService
+      .get('/badges', {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+      })
+      .then((response) => {
+        console.log(response)
+        setBadges(response.data)
+      })
+  }
+
   useEffect(() => {
-    setBadges(jsonBadges.data)
+    fetchBadges()
   }, [])
 
   return (
@@ -53,7 +67,6 @@ export default function Badges() {
         </form>
       </div>
 
-      
       <div>
         <div className={'text-text mx-7 MediumChill'}>Badges Classiques</div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>

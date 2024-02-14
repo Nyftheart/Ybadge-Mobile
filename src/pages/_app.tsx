@@ -9,6 +9,7 @@ import Navbar from '../components/navbar'
 
 export default function MyApp(props) {
   const { Component, pageProps } = props
+  const cors = require('cors')
 
   return (
     <ThemeProvider theme={theme}>
@@ -23,7 +24,7 @@ export default function MyApp(props) {
               </Layout>
             </div>
           </div>
-          
+
           <Navbar />
         </div>
       }
