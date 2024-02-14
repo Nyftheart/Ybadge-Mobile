@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import Filter from '../../components/filter'
 import jsonBadges from '../../../public/temp-data/badges.json'
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined'
 import Button from '@mui/material/Button'
@@ -28,6 +29,12 @@ const BadgeCard = ({ badge, height, width }: any) => {
 export default function Badges() {
   const [badges, setBadges] = useState<any>([])
   const [inputText, setInputText] = useState('')
+  const [drawerOpen, setDrawerOpen] = useState(false)
+
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen)
+  }
+
   useEffect(() => {
     setBadges(jsonBadges.data)
   }, [])
@@ -63,6 +70,7 @@ export default function Badges() {
 
   return (
     <div className=" min-h-screen ">
+      <Filter open={drawerOpen} toggleDrawer={toggleDrawer}></Filter>
       <Image
         src="/assets/img/Logo/Logo_white_short.svg"
         width={150}
@@ -71,7 +79,7 @@ export default function Badges() {
         className="m-auto pt-16"
       />
       <div className="flex flex-row justify-between items-center py-8">
-        <IconButton size="large">
+        <IconButton size="large" onClick={toggleDrawer}>
           <FilterAltOutlinedIcon />
         </IconButton>
         <div className="search-box">
