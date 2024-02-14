@@ -133,11 +133,17 @@ export default function SwipeableEdgeDrawer({ open, toggleDrawer }) {
               <div className="flex flex-row justify-between">
                 {groupCategories.map((categorie, index) => (
                   <Chip
-                    className="w-full mx-2 py-5 rounded-3xl"
+                    className="w-full mx-2 py-5 rounded-3xl border-2 border-white"
                     onClick={() => onSelectCategorie(categorie)}
                     key={index}
+                    clickable={false}
                     label={categorie}
                     size="medium"
+                    variant={
+                      !selectedCategories.includes(categorie)
+                        ? 'outlined'
+                        : 'filled'
+                    }
                     color={
                       selectedCategories.includes(categorie)
                         ? 'secondary'
@@ -154,11 +160,13 @@ export default function SwipeableEdgeDrawer({ open, toggleDrawer }) {
               <div className="flex flex-row justify-between">
                 {groupAlpha.map((group, index) => (
                   <Chip
-                    className="w-full mx-2 py-5 rounded-3xl"
+                    className="w-full mx-2 py-5 rounded-3xl border-2 border-white	"
                     key={index}
                     label={group}
                     size="medium"
+                    clickable={false}
                     onClick={() => handleAlphaClick(group)}
+                    variant={selectedAlpha === group ? 'filled' : 'outlined'}
                     color={selectedAlpha === group ? 'secondary' : 'default'}
                   />
                 ))}
@@ -171,11 +179,13 @@ export default function SwipeableEdgeDrawer({ open, toggleDrawer }) {
               <div className="flex flex-row justify-between">
                 {groupDate.map((group, index) => (
                   <Chip
-                    className="w-full mx-2 py-5 rounded-3xl"
+                    className="w-full mx-2 py-5 rounded-3xl border-2 border-white	"
                     key={index}
                     label={group}
                     size="medium"
+                    clickable={false}
                     onClick={() => handleDateClick(group)}
+                    variant={selectedAlpha === group ? 'filled' : 'outlined'}
                     color={selectedDate === group ? 'secondary' : 'default'}
                   />
                 ))}

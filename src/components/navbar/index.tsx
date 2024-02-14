@@ -2,8 +2,8 @@ import { Router, useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 export default function Navbar() {
-  const [active, setActive] = useState('home' as 'home' | 'badges' | 'account')
   const navigation = useRouter()
+  const [active, setActive] = useState(navigation.route.replace('/', ''))
 
   const navigateTo = (path: 'home' | 'badges' | 'account') => {
     setActive(path)
