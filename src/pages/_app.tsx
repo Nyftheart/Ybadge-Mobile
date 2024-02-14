@@ -16,7 +16,7 @@ export default function MyApp(props) {
         <div>
           <div className="w-full h-full px-6 bg-scroll bg-no-repeat bg-[url('/assets/img/background/bg.jpg')] bg-[length:100vw_100vh]">
             <div className="max-w-md min-h-screen relative mx-auto">
-              <SplashScreen />
+              {/* <SplashScreen /> */}
 
               <Layout>
                 <Component {...pageProps} />

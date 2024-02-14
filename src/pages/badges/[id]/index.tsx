@@ -29,7 +29,7 @@ export default function BadgeDetails() {
 
       <div
         className={
-          'select-none text-text text-center text-red-600 text-2xl p-8 w-full SemiboldChill'
+          'select-none text-text text-center text-2xl p-8 w-full SemiboldChill'
         }
       >
         Badge TEST
@@ -37,7 +37,7 @@ export default function BadgeDetails() {
 
       <p
         className={
-          'select-none text-text text-center text-orange-500 w-full text-sm font-light font-poppins'
+          'select-none text-text text-center w-full text-sm font-light font-poppins'
         }
       >
         Ce badge correspond à ta filière.
@@ -48,6 +48,8 @@ export default function BadgeDetails() {
           initialPosition={new Vector3(0, -5, -10)}
           isLocked={isLocked}
           badgeName={badgeName}
+          badgeScale={2}
+          isUnlocking={true}
         />
       </div>
     </div>
