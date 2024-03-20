@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import jsonBadges from '../../../public/temp-data/badges.json'
+import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined'
+import Button from '@mui/material/Button'
+import IconButton from '@mui/material/IconButton'
+import SearchIcon from '@mui/icons-material/Search'
+import CloseIcon from '@mui/icons-material/Close'
 const BadgeCard = ({ badge, height, width }: any) => {
   let href = `/PageBadgesDefinition?badgeName=${badge.name}`
   if (badge.locked === true) {
@@ -26,6 +32,14 @@ export default function Badges() {
     setBadges(jsonBadges.data)
   }, [])
 
+  const handleClose = () => {
+    console.log('tettest')
+    setInputText('')
+  }
+  const handleInputChange = (event) => {
+    setInputText(event.target.value)
+  }
+
   const labelList = () => {
     const badgeList = badges
       .map((badge: any) => {
@@ -39,9 +53,9 @@ export default function Badges() {
     console.log('🚀 ~ badgeList ~ badgeList:', badgeList)
     if (badgeList.length === 0) {
       return (
-        <Link href="https://docs.google.com/forms/d/1sBSiOYbaEqXdTRjQXNlFzoWZXXWMfj5Xe0tg-M1Q6V8/edit">
-          <button style={buttonStyle}>Une idée ?</button>
-        </Link>
+        <Button href="https://docs.google.com/forms/d/1sBSiOYbaEqXdTRjQXNlFzoWZXXWMfj5Xe0tg-M1Q6V8/edit">
+          Link
+        </Button>
       )
     }
     return badgeList
@@ -49,75 +63,33 @@ export default function Badges() {
 
   return (
     <div className=" min-h-screen ">
-      <img
-        src="/assets/img/LOGO_TYPO_BLANC.png"
-        width={125}
+      <Image
+        src="/assets/img/Logo/Logo_white_short.svg"
+        width={150}
         height={80}
         alt="logo"
-        className="m-auto pt-16 pb-8"
+        className="m-auto pt-16"
       />
-      <div className=" items-center mx-6 mb-11">
-        <form className=" flex items-center text-left justify-end">
-          <h1 className=" absolute text-text left-7  text-2xl font-semibold SemiboldChill">
-            <img
-              src="/assets/img/filtre.png"
-              width={29}
-              height={29}
-              alt="logo"
-              className="m-auto"
-            />
-          </h1>
-          {/* <Link href="../badgeidee"> */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-            }}
-          >
-            <img
-              src="/assets/img/Search.png"
-              width={22}
-              height={23}
-              alt="logo"
-              className="m-auto"
-            />
-            <div>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  width: 200,
-                }}
-              >
-                <input
-                  type="text"
-                  value={inputText}
-                  onChange={(e) => setInputText(e.target.value)}
-                  placeholder="Rechercher un badge"
-                  className="input-search input-slide-in"
-                  id="visible"
-                />
-                {inputText.length === 0 ? null : (
-                  <div className="searchbox">
-                    {inputText.length > 0 ? (
-                      <div className="searchbox__result">{labelList()}</div>
-                    ) : null}
-                  </div>
-                )}
-              </div>
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'flex-start',
-                alignItems: 'flex-start',
-                marginLeft: 15,
-              }}
-            ></div>
-          </div>
-        </form>
+      <div className="flex flex-row justify-between items-center py-8">
+        <IconButton size="large">
+          <FilterAltOutlinedIcon />
+        </IconButton>
+        <div className="search-box">
+          <IconButton size="large" className="btn-search">
+            <SearchIcon />
+          </IconButton>
+          <IconButton size="large" className="btn-close" onClick={handleClose}>
+            <CloseIcon />
+          </IconButton>
+          <input
+            type="text"
+            className="input-search"
+            value={inputText}
+            placeholder="Type to Search..."
+            onChange={handleInputChange}
+          />
+        </div>
       </div>
-
       <div>
         <div className={'text-text mx-7 MediumChill'}>Badges Classiques</div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
@@ -156,13 +128,4 @@ export default function Badges() {
       </div>
     </div>
   )
-}
-const buttonStyle = {
-  padding: '10px 20px',
-  fontSize: '16px',
-  backgroundColor: '#8c52ff',
-  color: '#fff',
-  border: 'none',
-  borderRadius: '35px',
-  cursor: 'pointer',
 }
