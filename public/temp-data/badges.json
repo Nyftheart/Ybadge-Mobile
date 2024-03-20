@@ -2,12 +2,12 @@
   "data": [
     {
       "locked": false,
-      "name": "logo",
+      "name": "lego",
       "id": 1
     },
     {
       "locked": true,
-      "name": "logo",
+      "name": "togo",
       "id": 2
     },
     {
@@ -22,27 +22,27 @@
     },
     {
       "locked": true,
-      "name": "logo",
+      "name": "toto",
       "id": 5
     },
     {
       "locked": false,
-      "name": "logo",
+      "name": "mito",
       "id": 6
     },
     {
       "locked": false,
-      "name": "logo",
+      "name": "letgo",
       "id": 7
     },
     {
       "locked": true,
-      "name": "logo",
+      "name": "letsgo",
       "id": 8
     },
     {
       "locked": true,
-      "name": "logo",
+      "name": "cado",
       "id": 9
     },
     {

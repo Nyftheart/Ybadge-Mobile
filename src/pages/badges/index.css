@@ -1,0 +1,45 @@
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.searchbox {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.563);
+  opacity: 1;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+
+  border-radius: 35px;
+}
+
+.input-search {
+  width: 200px;
+  height: 35px;
+  border-radius: 35px;
+  background-color: rgba(211, 211, 211, 0.563);
+  border: 1px solid rgba(211, 211, 211, 0.563);
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  margin-right: 12px;
+  position: relative;
+}
+
+.input-slide-in {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+}
+
+.searchbox__result {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}

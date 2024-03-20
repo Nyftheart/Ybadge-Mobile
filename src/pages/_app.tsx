@@ -23,7 +23,7 @@ export default function MyApp(props) {
               </Layout>
             </div>
           </div>
-          
+
           <Navbar />
         </div>
       }
