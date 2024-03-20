@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Filter from '../../components/filter'
 import jsonBadges from '../../../public/temp-data/badges.json'
 
 const BadgeCard = ({ badge, height, width }: any) => {
@@ -22,13 +23,19 @@ const BadgeCard = ({ badge, height, width }: any) => {
 
 export default function Badges() {
   const [badges, setBadges] = useState<any>([])
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     setBadges(jsonBadges.data)
   }, [])
 
+  const handleToggle = () => {
+    setOpen(!open)
+  }
+
   return (
     <div className=" min-h-screen ">
+      <Filter open={open}></Filter>
       <img
         src="/assets/img/LOGO_TYPO_BLANC.png"
         width={125}
@@ -41,7 +48,7 @@ export default function Badges() {
           <h1 className=" absolute text-text left-7  text-2xl font-semibold SemiboldChill">
             ALL COLLECTIONS
           </h1>
-          <Link href="PageBadgesRecherche">
+          <Link href="" onClick={handleToggle}>
             <img
               src="/assets/img/Search.png"
               width={22}
@@ -53,7 +60,6 @@ export default function Badges() {
         </form>
       </div>
 
-      
       <div>
         <div className={'text-text mx-7 MediumChill'}>Badges Classiques</div>
         <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
