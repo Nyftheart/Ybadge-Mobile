@@ -1,5 +1,5 @@
 import { useFrame, Canvas, useLoader } from '@react-three/fiber'
-import { Center, Text3D, useGLTF } from '@react-three/drei'
+import { Center, Text3D, useFBX, useGLTF } from '@react-three/drei'
 import { useState } from 'react'
 import { Euler, MeshPhongMaterial, Vector3 } from 'three'
 import { Motion, spring, PlainStyle } from 'react-motion'
@@ -25,8 +25,8 @@ export default function Badge({
       onPointerDown={() => setIsMouseDown(true)}
       camera={{ position: [0, 2, 6.5] }}
     >
-      <directionalLight
-        color={[255, 50, 50]}
+      {/* <directionalLight
+        color={[100, 100, 100]}
         intensity={0.005}
         position={[0, -50, 30]}
       />
@@ -34,6 +34,11 @@ export default function Badge({
         color={[150, 150, 150]}
         intensity={0.0005}
         position={[0, 50, 30]}
+      /> */}
+      <directionalLight
+        color={[255, 255, 255]}
+        intensity={0.001}
+        position={[-0.4, 0.3, 10]}
       />
       <BadgeModel
         isMouseDown={isMouseDown}
@@ -75,9 +80,9 @@ function BadgeModel({ isMouseDown, initialPosition, displayText }: any) {
   // )
 
   /** GLB */
-  const object = useGLTF(`/assets/three/badges/halloween/test.glb`)
+  const object = useFBX(`/assets/three/badges/bde/model-3.fbx`)
 
-  object.scene.scale.set(0.8, 0.8, 0.8)
+  object.scale.set(0.08, 0.08, 0.08)
 
   useFrame(({ pointer: { x, y } }) => {
     setPointer({ x: x, y: y })
@@ -149,7 +154,7 @@ function BadgeModel({ isMouseDown, initialPosition, displayText }: any) {
               </mesh>
             </group>
           )}
-          <primitive object={object.scene} />
+          <primitive object={object} />
         </group>
       )}
     </Motion>

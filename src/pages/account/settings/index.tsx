@@ -4,13 +4,19 @@ import jsonUser from '../../../../public/temp-data/user.json'
 import { User } from '../../../models/user.model'
 import { useEffect, useState } from 'react'
 import Button from '../../../components/button'
+import { useRouter } from 'next/router'
 
 export default function Settings() {
   const [user, setUser] = useState<User>({})
+  const router = useRouter()
 
   useEffect(() => {
     setUser(jsonUser.data)
   }, [])
+
+  const logout = () => {
+    router.push('/auth/login')
+  }
 
   return (
     <div>
@@ -58,11 +64,23 @@ export default function Settings() {
           </div>
         </div>
 
-        <Button additionalClasses={'mt-8'}>SE DÉCONNECTER</Button>
+        <Button additionalClasses={'mt-8'} onClick={() => logout()}>
+          SE DÉCONNECTER
+        </Button>
 
         <div className="mt-28 flex justify-center gap-6 flex-col">
-          <Button style="link" additionalClasses="font-medium text-center" href="/account/delete-confirmation">SUPPRIMER MON COMPTE</Button>
-          <Button style="link" additionalClasses="text-xs opacity-60 font-light" className="text-xs">
+          <Button
+            style="link"
+            additionalClasses="font-medium text-center"
+            href="/account/delete-confirmation"
+          >
+            SUPPRIMER MON COMPTE
+          </Button>
+          <Button
+            style="link"
+            additionalClasses="text-xs opacity-60 font-light"
+            className="text-xs"
+          >
             Mentions légales
           </Button>
         </div>

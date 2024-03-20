@@ -1,22 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import jsonBadges from '../../../public/temp-data/badges.json'
-import httpService from '../../services/http-service'
+import { ApiService } from '../../services/api-service'
+import { Badge } from '../../models/badge.model'
+import Image from 'next/image'
+import {
+  badgesCommuns,
+  badgesEpiques,
+  badgesLegendaires,
+  badgesRares,
+  badgesSpeciaux,
+} from '../../../public/temp-data/badges.js'
 
-const BadgeCard = ({ badge, height, width }: any) => {
-  let href = `/PageBadgesDefinition?badgeName=${badge.name}`
-  if (badge.locked === true) {
-    href += '&isLocked=true'
-  }
-
-  let imgSrc = `/assets/img/${badge.name}.png`
-  if (badge.locked === true) {
-    imgSrc = `/assets/img/${badge.name}_locked.png`
-  }
-
+const BadgeCard = ({ badge }: any) => {
+  const [imgSrc, setImgSrc] = useState(`/assets/img/badges/${badge.id}.png`)
   return (
-    <Link href={href}>
-      <img src={imgSrc} width={width} height={height} alt={badge.name} />
+    <Link href={`/badges/${badge.id}`}>
+      <Image
+        className="w-full object-cover rounded-md"
+        src={imgSrc}
+        width={150}
+        height={150}
+        alt={badge.nom}
+        onError={(e) => {
+          if (imgSrc === '/assets/img/badges/default.png') return
+
+          setImgSrc('/assets/img/badges/default.png')
+        }}
+      />
+
+      <p className="text-center mt-1">{badge.nom}</p>
     </Link>
   )
 }
@@ -24,82 +36,70 @@ const BadgeCard = ({ badge, height, width }: any) => {
 export default function Badges() {
   const [badges, setBadges] = useState<any>([])
 
-  const fetchBadges = async () => {
-    await httpService
-      .get('/badges', {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        },
-      })
-      .then((response) => {
-        console.log(response)
-        setBadges(response.data)
-      })
-  }
-
   useEffect(() => {
-    fetchBadges()
+    ApiService.getBadges().then((response) => {
+      setBadges(response.data)
+      // deleteEveryBadges()
+    })
   }, [])
 
-  return (
-    <div className=" min-h-screen ">
-      <img
-        src="/assets/img/LOGO_TYPO_BLANC.png"
-        width={125}
-        height={80}
-        alt="logo"
-        className="m-auto pt-16 pb-8"
-      />
-      <div className=" items-center mx-6 mb-11">
-        <form className=" flex items-center text-left justify-end">
-          <h1 className=" absolute text-text left-7  text-2xl font-semibold SemiboldChill">
-            ALL COLLECTIONS
-          </h1>
-          <Link href="PageBadgesRecherche">
-            <img
-              src="/assets/img/Search.png"
-              width={22}
-              height={23}
-              alt="logo"
-              className="m-auto"
-            />
-          </Link>
-        </form>
-      </div>
+  const deleteEveryBadges = () => {
+    badges.forEach((badge: Badge) => {
+      ApiService.deleteBadge(badge.id).then((response) => {
+        console.log(response)
+      })
+    })
+  }
 
-      <div>
-        <div className={'text-text mx-7 MediumChill'}>Badges Classiques</div>
-        <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
-          {badges.map((badge: any) => (
-            <BadgeCard key={badge.id} width={57} height={57} badge={badge} />
-          ))}
+  const createBadges = () => {
+    badgesCommuns.forEach((badge) => {
+      // ApiService.createBadge(badge)
+    })
+
+    badgesRares.forEach((badge) => {
+      // ApiService.createBadge(badge)
+    })
+
+    badgesEpiques.forEach((badge) => {
+      // ApiService.createBadge(badge)
+    })
+
+    badgesLegendaires.forEach((badge) => {
+      // ApiService.createBadge(badge)
+    })
+
+    badgesSpeciaux.forEach((badge) => {
+      // ApiService.createBadge(badge)
+    })
+
+    return badges
+  }
+
+  return (
+    <div id="badges">
+      <div className="mb-40">
+        <Image
+          src="/assets/img/LOGO_TYPO_BLANC.png"
+          width={125}
+          height={80}
+          alt="logo"
+          className="m-auto pt-16 pb-8"
+        />
+        <div className="mb-11 flex items-center justify-between">
+          <h1 className="text-2xl font-semibold">Liste des badges</h1>
+
+          <Image
+            src="/assets/img/Search.png"
+            width={22}
+            height={23}
+            alt="logo"
+            className="ml-auto"
+          />
         </div>
-      </div>
-      <div>
-        <div className={'text-text mx-7 mt-12 MediumChill'}>Badges Events</div>
-        <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
-          {badges.map((badge: any) => (
-            <BadgeCard key={badge.id} width={57} height={57} badge={badge} />
-          ))}
-        </div>
-      </div>
-      <div>
-        <div className={'text-text mx-7 mt-12 MediumChill'}>
-          Badges Spéciaux
-        </div>
-        <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
-          {badges.map((badge: any) => (
-            <BadgeCard key={badge.id} width={57} height={57} badge={badge} />
-          ))}
-        </div>
-      </div>
-      <div className="pb-20">
-        <div className={'text-text mx-7 mt-12 MediumChill'}>
-          Badges Challenge
-        </div>
-        <div className={'flex flex-wrap mt-6 mx-7 gap-6'}>
-          {badges.map((badge: any) => (
-            <BadgeCard key={badge.id} width={57} height={57} badge={badge} />
+
+        <div className="grid grid-cols-2 gap-10">
+          {badges.map((badge: Badge) => (
+            <BadgeCard key={badge.id} badge={badge} />
           ))}
         </div>
       </div>

@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import jsonBadges from '../../../public/temp-data/badges.json'
 import jsonUser from '../../../public/temp-data/user.json'
 import { useEffect, useState } from 'react'
 import { Badge } from '../../models/badge.model'
@@ -14,7 +13,6 @@ export default function Account() {
   const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
-    setBadges(jsonBadges.data)
     setUser(jsonUser.data)
   }, [])
 
