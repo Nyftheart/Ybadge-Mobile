@@ -23,7 +23,7 @@ export default function Badge({
       onPointerUp={() => setIsMouseDown(false)}
       onTouchStart={() => setIsMouseDown(true)}
       onPointerDown={() => setIsMouseDown(true)}
-      camera={{ position: [0, 2, 6.5] }}
+      camera={{ position: [0, 0, 0] as [x: number, y: number, z: number] }}
     >
       {/* <directionalLight
         color={[100, 100, 100]}
@@ -56,14 +56,16 @@ function BadgeModel({ isMouseDown, initialPosition, displayText }: any) {
   const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 })
   const [pointer, setPointer] = useState({ x: 0, y: 0 })
   const [badgeIsTurned, setBadgeIsTurned] = useState(false)
+  const [isMobileDbClick, setIsMobileDbClick] = useState(false)
 
+  /** OBJ + MTL */
   // const materials = useLoader(
   //   MTLLoader,
-  //   `/assets/three/badges/halloween/test2.mtl`
+  //   `/assets/three/badges/test/material.mtl`
   // )
   // const object = useLoader(
   //   OBJLoader,
-  //   `/assets/three/badges/halloween/test2.obj`,
+  //   `/assets/three/badges/test/object.obj`,
   //   (loader: any) => {
   //     materials.preload()
   //     loader.setMaterials(materials)
@@ -80,7 +82,7 @@ function BadgeModel({ isMouseDown, initialPosition, displayText }: any) {
   // )
 
   /** GLB */
-  const object = useFBX(`/assets/three/badges/bde/model-3.fbx`)
+  const object = useFBX(`/assets/three/badges/bde/model-5.fbx`)
 
   object.scale.set(0.08, 0.08, 0.08)
 
@@ -91,6 +93,18 @@ function BadgeModel({ isMouseDown, initialPosition, displayText }: any) {
   const turnBadge = () => {
     setBadgeIsTurned(!badgeIsTurned)
     setRotation({ x: 0, y: rotation.y + Math.PI, z: 0 })
+  }
+
+  const mobileTurnBadge = () => {
+    if (isMobileDbClick) {
+      turnBadge()
+    }
+
+    setIsMobileDbClick(true)
+
+    setTimeout(() => {
+      setIsMobileDbClick(false)
+    }, 200)
   }
 
   const interpolate = (interpolated: PlainStyle) =>
@@ -116,6 +130,7 @@ function BadgeModel({ isMouseDown, initialPosition, displayText }: any) {
       {(interpolated) => (
         <group
           onDoubleClick={() => turnBadge()}
+          onClick={() => mobileTurnBadge()}
           position={position}
           rotation={interpolate(interpolated)}
         >
@@ -142,9 +157,9 @@ function BadgeModel({ isMouseDown, initialPosition, displayText }: any) {
                   rotation-y={Math.PI}
                 >
                   {new Date().getDate() +
-                    '-' +
+                    '/' +
                     (new Date().getMonth() + 1) +
-                    '-' +
+                    '/' +
                     new Date().getFullYear()}
                 </Text3D>
               </Center>

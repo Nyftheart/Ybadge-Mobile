@@ -13,7 +13,11 @@ export const ApiService = {
     return _httpService.get('/badges/all', options)
   },
   getBadgeById(id: number) {
-    return _httpService.get(`/badges/${id}`)
+    return _httpService.get(`/badges`, {
+      headers: {
+        idBadge: id,
+      },
+    })
   },
   createBadge(data: any) {
     return _httpService.post('/badges', data)
