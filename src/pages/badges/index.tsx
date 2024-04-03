@@ -130,9 +130,6 @@ export default function Badges() {
           <IconButton size="large" className="btn-search">
             <SearchIcon />
           </IconButton>
-          <IconButton size="large" className="btn-close" onClick={handleClose}>
-            <CloseIcon />
-          </IconButton>
           <input
             type="text"
             className="input-search"

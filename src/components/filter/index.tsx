@@ -25,13 +25,41 @@ const Puller = styled('div')(({ theme }) => ({
 }))
 
 export default function SwipeableEdgeDrawer({ open, toggleDrawer }) {
-  const groupCategories = ['Classiques', 'Spéciaux', 'Event']
+  const groupCategories = [
+    {
+      id: 'communs',
+      name: 'Communs',
+    },
+    {
+      id: 'rares',
+      name: 'Rares',
+    },
+    {
+      id: 'epiques',
+      name: 'Épiques',
+    },
+    {
+      id: 'legendaires',
+      name: 'Légendaires',
+    },
+    {
+      id: 'speciaux',
+      name: 'Spéciaux',
+    }
+  ]
   const [selectedCategories, setSelectedCategories] = useState([])
   const [selectedAlpha, setSelectedAlpha] = useState(null)
   const [selectedDate, setSelectedDate] = useState(null)
 
-  const groupAlpha = ['A à Z', 'Z à A']
-  const groupDate = ['Récent', 'Ancien']
+  const groupAlpha = [
+    { id: 'asc', name: 'A à Z' },
+    { id: 'desc', name: 'Z à A' },
+    { id: 'default', name: 'Default' },
+  ]
+  const groupDate = [
+    { id: 'recent', name: 'Récent' },
+    { id: 'old', name: 'Ancien' },
+  ]
 
   const handleAlphaClick = (chipValue) => {
     setSelectedAlpha(chipValue === selectedAlpha ? null : chipValue)
@@ -130,22 +158,22 @@ export default function SwipeableEdgeDrawer({ open, toggleDrawer }) {
             </Button>
             <div className="flex flex-col mb-8">
               <span className="text-lg font-semibold mb-3">Catégorie</span>
-              <div className="flex flex-row justify-between">
+              <div className="flex flex-row flex-wrap gap-2 justify-center">
                 {groupCategories.map((categorie, index) => (
                   <Chip
-                    className="w-full mx-2 py-5 rounded-3xl border-2 border-white"
-                    onClick={() => onSelectCategorie(categorie)}
+                    className="py-5 rounded-3xl min-w-[30%] border-2 border-white"
+                    onClick={() => onSelectCategorie(categorie.id)}
                     key={index}
                     clickable={false}
-                    label={categorie}
+                    label={categorie.name}
                     size="medium"
                     variant={
-                      !selectedCategories.includes(categorie)
+                      !selectedCategories.includes(categorie.id)
                         ? 'outlined'
                         : 'filled'
                     }
                     color={
-                      selectedCategories.includes(categorie)
+                      selectedCategories.includes(categorie.id)
                         ? 'secondary'
                         : 'default'
                     }
@@ -162,12 +190,12 @@ export default function SwipeableEdgeDrawer({ open, toggleDrawer }) {
                   <Chip
                     className="w-full mx-2 py-5 rounded-3xl border-2 border-white	"
                     key={index}
-                    label={group}
+                    label={group.name}
                     size="medium"
                     clickable={false}
-                    onClick={() => handleAlphaClick(group)}
-                    variant={selectedAlpha === group ? 'filled' : 'outlined'}
-                    color={selectedAlpha === group ? 'secondary' : 'default'}
+                    onClick={() => handleAlphaClick(group.id)}
+                    variant={selectedAlpha === group.id ? 'filled' : 'outlined'}
+                    color={selectedAlpha === group.id ? 'secondary' : 'default'}
                   />
                 ))}
               </div>
@@ -181,12 +209,12 @@ export default function SwipeableEdgeDrawer({ open, toggleDrawer }) {
                   <Chip
                     className="w-full mx-2 py-5 rounded-3xl border-2 border-white	"
                     key={index}
-                    label={group}
+                    label={group.name}
                     size="medium"
                     clickable={false}
-                    onClick={() => handleDateClick(group)}
-                    variant={selectedAlpha === group ? 'filled' : 'outlined'}
-                    color={selectedDate === group ? 'secondary' : 'default'}
+                    onClick={() => handleDateClick(group.id)}
+                    variant={selectedAlpha === group.id ? 'filled' : 'outlined'}
+                    color={selectedDate === group.id ? 'secondary' : 'default'}
                   />
                 ))}
               </div>
