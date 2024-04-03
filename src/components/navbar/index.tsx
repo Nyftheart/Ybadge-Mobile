@@ -36,7 +36,7 @@ export default function Navbar() {
     >
       <div
         id="nav-items"
-        className="relative flex px-6 justify-between bg-white h-full w-80 rounded-xl shadow-[0_4px_4px_-0px_rgba(0,0,0,0.3)]"
+        className="relative flex px-6 justify-between bg-white h-full w-80 rounded-full shadow-[0_4px_4px_-0px_rgba(0,0,0,0.3)]"
       >
         <div
           id="home"

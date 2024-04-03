@@ -1,47 +1,34 @@
-import Image from 'next/image'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
-export default function Searchbar({ value = '', onSearch = (string) => {} }) {
-  const [searchTerm, setSearchTerm] = useState(value)
+const SearchBar = () => {
+  const [searchQuery, setSearchQuery] = useState('')
 
-  const handleValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value
-    setSearchTerm(newValue)
-    onSearch(newValue)
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value)
   }
 
-  const resetValue = () => {
-    setSearchTerm('')
-    onSearch('')
+  const handleSearch = () => {
+    // Mettez en œuvre la logique de recherche en fonction de searchQuery
+    console.log(`Recherche en cours : ${searchQuery}`)
   }
 
   return (
-    <div className="relative rounded-full px-8 w-full h-7 bg-[#BEBEBE] bg-opacity-50">
-      <div className="absolute left-3 top-[6px]">
-        <Image
-          src="/assets/illustrations/search.svg"
-          width={12}
-          height={12}
-          alt="Search icon"
-        />
-      </div>
-
+    <div className="flex items-center">
       <input
-        className="text-xs w-full bg-transparent text-white outline-none"
         type="text"
-        placeholder="Rechercher"
-        value={searchTerm}
-        onChange={handleValueChange}
+        placeholder="Rechercher..."
+        value={searchQuery}
+        onChange={handleInputChange}
+        className="border rounded-l py-2 px-4 outline-none focus:ring focus:border-blue-300"
       />
-
-      <div className="absolute right-2 top-[7px]" onClick={() => resetValue()}>
-        <Image
-          src="/assets/illustrations/close.svg"
-          width={14}
-          height={14}
-          alt="Close icon"
-        />
-      </div>
+      <button
+        onClick={handleSearch}
+        className="bg-blue-500 text-white py-2 px-4 rounded-r hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+      >
+        Rechercher
+      </button>
     </div>
   )
 }
+
+export default SearchBar

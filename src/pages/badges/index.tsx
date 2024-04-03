@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import Filter from '../../components/filter'
+import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined'
+import Button from '@mui/material/Button'
+import IconButton from '@mui/material/IconButton'
+import SearchIcon from '@mui/icons-material/Search'
+import CloseIcon from '@mui/icons-material/Close'
 import { ApiService } from '../../services/api-service'
 import { Badge } from '../../models/badge.model'
-import Image from 'next/image'
 import {
   badgesCommuns,
   badgesEpiques,
@@ -35,13 +41,13 @@ const BadgeCard = ({ badge }: any) => {
 
 export default function Badges() {
   const [badges, setBadges] = useState<any>([])
+  const [searchedBadges, setSearchedBadges] = useState<any>([])
+  const [inputText, setInputText] = useState('')
+  const [drawerOpen, setDrawerOpen] = useState(false)
 
-  useEffect(() => {
-    ApiService.getBadges().then((response) => {
-      setBadges(response.data)
-      // deleteEveryBadges()
-    })
-  }, [])
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen)
+  }
 
   const deleteEveryBadges = () => {
     badges.forEach((badge: Badge) => {
@@ -75,33 +81,78 @@ export default function Badges() {
     return badges
   }
 
-  return (
-    <div id="badges">
-      <div className="mb-40">
-        <Image
-          src="/assets/img/LOGO_TYPO_BLANC.png"
-          width={125}
-          height={80}
-          alt="logo"
-          className="m-auto pt-16 pb-8"
-        />
-        <div className="mb-11 flex items-center justify-between">
-          <h1 className="text-2xl font-semibold">Liste des badges</h1>
+  const handleClose = () => {
+    console.log('tettest')
+    setInputText('')
+  }
 
-          <Image
-            src="/assets/img/Search.png"
-            width={22}
-            height={23}
-            alt="logo"
-            className="ml-auto"
+  const handleInputChange = (event) => {
+    setInputText(event.target.value)
+  }
+
+  useEffect(() => {
+    ApiService.getBadges().then((response) => {
+      setBadges(response.data)
+      setSearchedBadges(response.data)
+      // deleteEveryBadges()
+    })
+  }, [])
+
+  useEffect(() => {
+    if (!inputText) {
+      setSearchedBadges(badges)
+    } else {
+      const filteredBadges = badges.filter((badge: Badge) => {
+        return badge?.nom?.toLowerCase()?.includes(inputText.toLowerCase())
+      })
+
+      setSearchedBadges(filteredBadges)
+    }
+  }, [inputText])
+
+  return (
+    <div id="badges" className="overflow-y-auto">
+      <Image
+        src="/assets/img/Logo/Logo_white_short.svg"
+        width={150}
+        height={80}
+        alt="logo"
+        className="m-auto pt-16"
+      />
+      <Filter open={drawerOpen} toggleDrawer={toggleDrawer}></Filter>
+
+      <div className="flex flex-row justify-between items-center py-8">
+        <IconButton size="large" onClick={toggleDrawer}>
+          <FilterAltOutlinedIcon />
+        </IconButton>
+
+        <div className="search-box">
+          <IconButton size="large" className="btn-search">
+            <SearchIcon />
+          </IconButton>
+          <IconButton size="large" className="btn-close" onClick={handleClose}>
+            <CloseIcon />
+          </IconButton>
+          <input
+            type="text"
+            className="input-search"
+            value={inputText}
+            placeholder="Type to Search..."
+            onChange={handleInputChange}
           />
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 gap-10">
-          {badges.map((badge: Badge) => (
-            <BadgeCard key={badge.id} badge={badge} />
-          ))}
-        </div>
+      <div className="grid grid-cols-2 gap-10">
+        {searchedBadges.map((badge: Badge) => (
+          <BadgeCard key={badge.id} badge={badge} />
+        ))}
+
+        {searchedBadges.length === 0 && (
+          <Button href="https://docs.google.com/forms/d/1sBSiOYbaEqXdTRjQXNlFzoWZXXWMfj5Xe0tg-M1Q6V8/edit">
+            Link
+          </Button>
+        )}
       </div>
     </div>
   )
