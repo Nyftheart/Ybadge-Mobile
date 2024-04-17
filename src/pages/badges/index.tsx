@@ -26,7 +26,7 @@ const BadgeCard = ({ badge }: any) => {
         src={imgSrc}
         width={150}
         height={150}
-        alt={badge.nom}
+        alt={badge.nom || 'badge'}
         onError={(e) => {
           if (imgSrc === '/assets/img/badges/default.png') return
 
@@ -82,7 +82,6 @@ export default function Badges() {
   }
 
   const handleClose = () => {
-    console.log('tettest')
     setInputText('')
   }
 
@@ -95,6 +94,7 @@ export default function Badges() {
       setBadges(response.data)
       setSearchedBadges(response.data)
       // deleteEveryBadges()
+      // createBadges()
     })
   }, [])
 
@@ -111,7 +111,7 @@ export default function Badges() {
   }, [inputText])
 
   return (
-    <div id="badges" className="overflow-y-auto">
+    <div id="badges" className="overflow-y-auto mb-40">
       <Image
         src="/assets/img/Logo/Logo_white_short.svg"
         width={150}
@@ -134,7 +134,7 @@ export default function Badges() {
             type="text"
             className="input-search"
             value={inputText}
-            placeholder="Type to Search..."
+            placeholder="Rechercher un badge"
             onChange={handleInputChange}
           />
         </div>

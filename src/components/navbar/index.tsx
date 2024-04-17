@@ -7,14 +7,20 @@ export default function Navbar() {
 
   const navigateTo = (path: 'home' | 'badges' | 'account') => {
     setActive(path)
+
     navigation.push(`/${path}`)
   }
 
   useEffect(() => {
-    const navIndicator = document.getElementById('nav-indicator')
-    const home = document.getElementById('home')
-    const badges = document.getElementById('badges')
-    const account = document.getElementById('account')
+    setActive(navigation.route.replace('/', ''))
+  }, [navigation.route])
+
+  useEffect(() => {
+    const navBar = document.getElementById('nav-bar')
+    const navIndicator = navBar.querySelector('#nav-indicator')
+    const home = navBar.querySelector('#home')
+    const badges = navBar.querySelector('#badges')
+    const account = navBar.querySelector('#account')
 
     switch (active) {
       case 'home':
@@ -27,7 +33,7 @@ export default function Navbar() {
         navIndicator.style.left = account.offsetLeft + 15 + 'px'
         break
     }
-  }, [active])
+  }, [active, navigation.route])
 
   return (
     <div
