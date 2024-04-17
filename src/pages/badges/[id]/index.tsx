@@ -31,7 +31,7 @@ export default function BadgeDetails() {
     <div className={'min-h-screen pointer-events-none touch-none'}>
       <Link
         href="/badges"
-        className="touch-auto pointer-events-auto relative z-10"
+        className="touch-auto pointer-events-auto relative z-10 top-10"
       >
         <img
           src="/assets/illustrations/arrow.svg"
@@ -42,9 +42,9 @@ export default function BadgeDetails() {
       </Link>
 
       <div
-        className={'text-text text-center text-2xl p-8 w-full SemiboldChill'}
+        className={'text-text text-center text-2xl p-8 mt-10 w-full SemiboldChill'}
       >
-        {badge.nom}
+        {badge.nom || 'Nom du badge'}
       </div>
 
       <p
@@ -52,12 +52,12 @@ export default function BadgeDetails() {
           'text-text text-center w-full text-sm font-light font-poppins'
         }
       >
-        {badge.description}
+        {badge.description || 'Description du badge'}
       </p>
 
       <div className="fixed z-0 top-0 right-0 bottom-0 left-0 touch-auto pointer-events-auto">
         <Badge
-          initialPosition={new Vector3(0, 0, -20)}
+          initialPosition={new Vector3(0, -6, -20)}
           isLocked={isLocked}
           badgeName={badge.id}
         />

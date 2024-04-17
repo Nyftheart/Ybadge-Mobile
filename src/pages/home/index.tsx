@@ -73,7 +73,7 @@ export default function Home() {
       </Modal>
       <div className="pt-7 pb-5 flex flex-row justify-between">
         <IconButton>
-          <MenuIcon />
+          {/* <MenuIcon /> */}
         </IconButton>
         <IconButton onClick={handleOpen}>
           <SettingsIcon />

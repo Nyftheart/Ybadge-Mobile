@@ -25,7 +25,7 @@ export default function Badge({
       onPointerDown={() => setIsMouseDown(true)}
       camera={{ position: [0, 0, 0] as [x: number, y: number, z: number] }}
     >
-      {/* <directionalLight
+      <directionalLight
         color={[100, 100, 100]}
         intensity={0.005}
         position={[0, -50, 30]}
@@ -34,7 +34,7 @@ export default function Badge({
         color={[150, 150, 150]}
         intensity={0.0005}
         position={[0, 50, 30]}
-      /> */}
+      />
       <directionalLight
         color={[255, 255, 255]}
         intensity={0.001}
