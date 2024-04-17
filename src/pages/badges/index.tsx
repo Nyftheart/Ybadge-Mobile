@@ -1,43 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import Filter from '../../components/filter'
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined'
-import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
-import CloseIcon from '@mui/icons-material/Close'
 import { ApiService } from '../../services/api-service'
 import { Badge } from '../../models/badge.model'
-import {
-  badgesCommuns,
-  badgesEpiques,
-  badgesLegendaires,
-  badgesRares,
-  badgesSpeciaux,
-} from '../../../public/temp-data/badges.js'
-
-const BadgeCard = ({ badge }: any) => {
-  const [imgSrc, setImgSrc] = useState(`/assets/img/badges/${badge.id}.png`)
-  return (
-    <Link href={`/badges/${badge.id}`}>
-      <Image
-        className="w-full object-cover rounded-md"
-        src={imgSrc}
-        width={150}
-        height={150}
-        alt={badge.nom || 'badge'}
-        onError={(e) => {
-          if (imgSrc === '/assets/img/badges/default.png') return
-
-          setImgSrc('/assets/img/badges/default.png')
-        }}
-      />
-
-      <p className="text-center mt-1">{badge.nom}</p>
-    </Link>
-  )
-}
+import BadgesList from '../../components/badgesList'
 
 export default function Badges() {
   const [badges, setBadges] = useState<any>([])
@@ -49,42 +18,6 @@ export default function Badges() {
     setDrawerOpen(!drawerOpen)
   }
 
-  const deleteEveryBadges = () => {
-    badges.forEach((badge: Badge) => {
-      ApiService.deleteBadge(badge.id).then((response) => {
-        console.log(response)
-      })
-    })
-  }
-
-  const createBadges = () => {
-    badgesCommuns.forEach((badge) => {
-      // ApiService.createBadge(badge)
-    })
-
-    badgesRares.forEach((badge) => {
-      // ApiService.createBadge(badge)
-    })
-
-    badgesEpiques.forEach((badge) => {
-      // ApiService.createBadge(badge)
-    })
-
-    badgesLegendaires.forEach((badge) => {
-      // ApiService.createBadge(badge)
-    })
-
-    badgesSpeciaux.forEach((badge) => {
-      // ApiService.createBadge(badge)
-    })
-
-    return badges
-  }
-
-  const handleClose = () => {
-    setInputText('')
-  }
-
   const handleInputChange = (event) => {
     setInputText(event.target.value)
   }
@@ -93,8 +26,6 @@ export default function Badges() {
     ApiService.getBadges().then((response) => {
       setBadges(response.data)
       setSearchedBadges(response.data)
-      // deleteEveryBadges()
-      // createBadges()
     })
   }, [])
 
@@ -140,17 +71,7 @@ export default function Badges() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-10">
-        {searchedBadges.map((badge: Badge) => (
-          <BadgeCard key={badge.id} badge={badge} />
-        ))}
-
-        {searchedBadges.length === 0 && (
-          <Button href="https://docs.google.com/forms/d/1sBSiOYbaEqXdTRjQXNlFzoWZXXWMfj5Xe0tg-M1Q6V8/edit">
-            Link
-          </Button>
-        )}
-      </div>
+      <BadgesList badges={searchedBadges} />
     </div>
   )
 }

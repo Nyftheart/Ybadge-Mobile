@@ -4,11 +4,13 @@ import jsonUser from '../../../public/temp-data/user.json'
 import { useEffect, useState } from 'react'
 import { Badge } from '../../models/badge.model'
 import { User } from '../../models/user.model'
-import BadgesList from '../../components/badges-list'
+import BadgesList from '../../components/badgesList'
+import { ApiService } from '../../services/api-service'
 
 export default function Account() {
   const [user, setUser] = useState<User>({})
-  const [badges, setBadges] = useState<Array<Badge>>([])
+  const [badges, setBadges] = useState<any>([])
+  const [searchedBadges, setSearchedBadges] = useState<any>([])
   const [filteredBadges, setFilteredBadges] = useState<Array<Badge>>([])
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -17,12 +19,23 @@ export default function Account() {
   }, [])
 
   useEffect(() => {
-    const searchedBadges = badges.filter((badge) =>
-      badge.name.toLowerCase().includes(searchTerm.toLowerCase())
-    )
+    ApiService.getBadges().then((response) => {
+      setBadges(response.data)
+      setSearchedBadges(response.data)
+    })
+  }, [])
 
-    setFilteredBadges(searchedBadges)
-  }, [searchTerm, badges])
+  useEffect(() => {
+    if (!searchTerm) {
+      setSearchedBadges(badges)
+    } else {
+      const filteredBadges = badges.filter((badge: Badge) => {
+        return badge?.nom?.toLowerCase()?.includes(searchTerm.toLowerCase())
+      })
+
+      setSearchedBadges(filteredBadges)
+    }
+  }, [searchTerm])
 
   return (
     <div className="py-20">
@@ -73,7 +86,7 @@ export default function Account() {
       </div>
 
       <div className="mt-8 mb-20">
-        <BadgesList badges={filteredBadges} onSearch={setSearchTerm} />
+        <BadgesList badges={badges} />
       </div>
     </div>
   )

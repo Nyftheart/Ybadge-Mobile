@@ -12,15 +12,25 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    setActive(navigation.route.replace('/', ''))
+    console.log(navigation.route)
+
+    if (navigation.route.includes('home')) {
+      setActive('home')
+    } else if (navigation.route.includes('badges')) {
+      setActive('badges')
+    } else if (navigation.route.includes('account')) {
+      setActive('account')
+    } else {
+      setActive('home')
+    }
   }, [navigation.route])
 
   useEffect(() => {
     const navBar = document.getElementById('nav-bar')
-    const navIndicator = navBar.querySelector('#nav-indicator')
-    const home = navBar.querySelector('#home')
-    const badges = navBar.querySelector('#badges')
-    const account = navBar.querySelector('#account')
+    const navIndicator: any = navBar.querySelector('#nav-indicator')
+    const home: any = navBar.querySelector('#home')
+    const badges: any = navBar.querySelector('#badges')
+    const account: any = navBar.querySelector('#account')
 
     switch (active) {
       case 'home':
