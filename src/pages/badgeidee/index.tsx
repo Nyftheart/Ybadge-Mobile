@@ -25,11 +25,11 @@ const MyForm = () => {
         alt="logo"
         className="m-auto pt-16 pb-8"
       />
-      <div style={containerStyle}>
+      {/* <div style={containerStyle}> */}
         <Link href="https://docs.google.com/forms/d/1sBSiOYbaEqXdTRjQXNlFzoWZXXWMfj5Xe0tg-M1Q6V8/edit">
           <button style={buttonStyle}>Une idée ?</button>
         </Link>
-      </div>
+      {/* </div> */}
     </div>
   )
 }
