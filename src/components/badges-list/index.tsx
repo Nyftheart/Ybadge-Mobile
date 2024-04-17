@@ -1,6 +1,10 @@
+import React, { useEffect, useState } from 'react'
+
 import Searchbar from '../searchbar'
 import { Badge } from '../../models/badge.model'
 import Image from 'next/image'
+import IconButton from '@mui/material/IconButton'
+import SearchIcon from '@mui/icons-material/Search'
 
 export default function BadgesList({
   badges,
@@ -9,16 +13,32 @@ export default function BadgesList({
   badges: Array<Badge>
   onSearch: (event: string) => void
 }) {
+  const [inputText, setInputText] = useState('')
+  const handleInputChange = (event) => {
+    setInputText(event.target.value)
+  }
+
   const handleSearch = (event: string) => {
     onSearch(event)
   }
 
   return (
     <>
-      <div className="grid grid-cols-2">
+      <div className="flex flex-row justify-between items-center py-8">
         <p className="text-xl font-chillax font-medium">Ma collection</p>
 
-        <Searchbar onSearch={handleSearch} />
+        <div className="search-box">
+          <IconButton size="large" className="btn-search-box">
+            <SearchIcon />
+          </IconButton>
+          <input
+            type="text"
+            className="input-search-box"
+            value={inputText}
+            placeholder="Type to Search..."
+            onChange={handleInputChange}
+          />
+        </div>
       </div>
 
       {badges.length > 0 ? (

@@ -144,13 +144,18 @@ export default function Badges() {
         {searchedBadges.map((badge: Badge) => (
           <BadgeCard key={badge.id} badge={badge} />
         ))}
-
-        {searchedBadges.length === 0 && (
-          <Button href="https://docs.google.com/forms/d/1sBSiOYbaEqXdTRjQXNlFzoWZXXWMfj5Xe0tg-M1Q6V8/edit">
-            Link
-          </Button>
-        )}
       </div>
+      {searchedBadges.length === 0 && (
+        <div className="text-center mt-40">
+          <p className="text-xl text-white">Aucun résultat</p>
+          <Link
+            className="underline "
+            href="https://docs.google.com/forms/d/1sBSiOYbaEqXdTRjQXNlFzoWZXXWMfj5Xe0tg-M1Q6V8/edit"
+          >
+            une idée?
+          </Link>
+        </div>
+      )}
     </div>
   )
 }
